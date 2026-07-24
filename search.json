@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Course Page Template: User Guide",
     "section": "",
-    "text": "Welcome to the SciLifeLab Training Template User Guide.\nThis guide explains how to customise the landing page and course pages without editing the template code.\nBy the end of this guide you will know how to:\n\nChange the course title and subtitle\nConfigure the hero buttons\nAdd your organisation’s logo\nEdit the course information cards\nConfigure course instances\nCustomise the course pages\n\n\n0.0.1 Before you begin\nThis guide assumes that you have:\n\ncloned the repository\ninstalled the required software\ncan preview the template locally\n\nContinue with Getting started to set up your local environment.",
+    "text": "Welcome to the SciLifeLab Training Template User Guide.\nThis guide explains how to customise the landing page and course pages without editing the template code.\nBy the end of this guide you will know how to:\n\nChange the course title and subtitle\nConfigure the hero buttons\nAdd your organisation’s logo\nEdit the course information cards\nConfigure course instances\nCustomise the course pages\n\n\n0.0.1 Before you begin\nThis guide assumes that you have:\n\ncloned the repository\ninstalled the required software\ncan preview the template locally\n\nContinue with Getting started to set up your local environment.\nTest for automatic deployment",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
