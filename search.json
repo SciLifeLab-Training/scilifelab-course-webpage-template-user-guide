@@ -14,7 +14,7 @@
     "href": "getting-started.html",
     "title": "2  Getting started",
     "section": "",
-    "text": "3 The SciLifeLab Course Template\nThis repository publishes one website with two layers:\nExamples:",
+    "text": "3 The SciLifeLab Course Template\nThis guide assumes you have:\nTo preview the landing page locally:\nThis repository publishes one website with two layers:\nExamples:",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started</span>"
     ]
@@ -104,7 +104,7 @@
     "href": "landing-page.html",
     "title": "3  Landing page",
     "section": "",
-    "text": "3.1 Remove the template banner\nThe yellow banner at the top of the landing page provides a link to this User Guide. It is included to help you set up and customise the template and is not intended to remain on your course website.\nOnce you are ready to use the template for your own course, you can remove the banner.",
+    "text": "3.1 Remove the template banner\nThe landing page introduces your course and provides visitors with the information they need to decide whether they want to register for your course or access a course instance.\nIn the following sections, you will find how to:\nEach section in this chapter explains which file to edit and provides step-by-step instructions.\nThe yellow banner at the top of the landing page provides a link to this User Guide. It is included to help you set up and customise the template and is not intended to remain on your course website.\nOnce you are ready to use the template for your own course, you can remove the banner.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Landing page</span>"
     ]
@@ -184,7 +184,7 @@
     "href": "fairification.html",
     "title": "4  FAIRification and publishing your course",
     "section": "",
-    "text": "4.1 Licensing your training materials",
+    "text": "4.1 Licensing your training materials\nMake the materials Findable, Accessible, Interoperable and Reusable, with",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>FAIRification and publishing your course</span>"
     ]
