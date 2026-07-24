@@ -1,0 +1,16 @@
+project:
+  type: book
+
+book:
+  title: "Course Page Template: User Guide"
+  chapters:
+    - index.qmd
+    - getting-started.qmd
+    - landing-page.qmd
+    - fairification.qmd
+
+format:
+  html:
+    theme: default
+    css: styles.css
+    toc: false
