@@ -28,3 +28,5 @@ This guide assumes that you have:
 - can preview the template locally
 
 Continue with **Getting started** to set up your local environment.
+
+Test for automatic deployment
