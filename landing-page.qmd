@@ -7,6 +7,11 @@ title: "Landing page"
 <br>
 
 The [landing page](https://scilifelab-training.github.io/scilifelab-training-template-staging/) introduces your course and provides visitors with the information they need to decide whether they want to register for your course or   access a course instance.
+
+The figure below shows the main sections of the landing page and the terminology used throughout this guide.
+
+![](images/template-landing-page.png){width=75% fig-alt="Annotated example of the course landing page showing the template banner, course title and subtitle, organisation logo, hero action buttons, course information cards, course instance banner image, course instances, and page footer."}
+
   
 In the following sections, you will find how to:
 
@@ -15,10 +20,14 @@ In the following sections, you will find how to:
 - [Add or remove organisation logos](#hero-add-or-remove-a-logo)
 - [Configure the hero action buttons](#hero-configure-the-current-course-instance-and-registration-action-buttons)
 - [Edit the course information cards](#course-information-cards-edit-text)
+- [Change the course instance banner image](#change-the-course-instance-banner-image)
 - [Manage course instances](#manage-course-instances)
 - [Edit the page footer](#edit-the-footer)
 
-Each section in this chapter explains which file to edit and provides step-by-step instructions.
+Each section in this chapter explains which file to edit and provides step-by-step instructions.  
+    
+At the end of each section, you will also find a **Quick reference** box summarising the most important changes. These boxes show you at a glance which file to edit and what to change, and can be useful when you return to the guide after you are already familiar with the individual steps.
+
 
 <br>
 
@@ -168,10 +177,10 @@ For example:
 
 3. Delete the entire `<div class="hero__brand-item">...</div>` block.
 
-4. OPTIONAL: If you no longer need the logo image, you can also delete it from the `img/logos` folder.
 
-- **VS Code:** Right-click the file and select **Delete**.
-- **GitHub Desktop:** Open the repository, locate the file, click the three dots (**⋮**), and choose **Delete file**.
+4. OPTIONAL: If you no longer need the logo image, you can also delete it from the `img/logos` folder.
+    - **VS Code:** Right-click the file and select **Delete**.
+    - **GitHub Desktop:** Open the repository, locate the file, click the three dots (**⋮**), and choose **Delete file**. 
 
 
 ::: {.quick-reference}
@@ -209,7 +218,12 @@ status: current
 ```
 
 3. Update `slug`, `label`, `instance_url`, and `sort_key` to match the current course instance.
+
+::: {.callout-important}
+
 The values of `slug` and `instance_url` must match!
+
+:::
 
 For example:
 
@@ -479,6 +493,79 @@ replace the example names with the names of the course contributors.
 | Change the keywords | `_sections/top-cards.qmd` | Replace the bullet list in the **Keywords** card. |
 | Change the course founders | `_sections/bottom-cards.qmd` | Replace the names in the **Course founders** card. |
 | Change the course contributors | `_sections/bottom-cards.qmd` | Replace the names in the **Contributors** card. |
+
+:::
+
+## Change the course instance banner image
+The *All course instances* banner contains a decorative image alongside the links to the available course instances. You can replace this image with an image that represents your course.
+
+### 1. Add your image
+1. In the main branch, open the `img` folder and then the `images` folder.
+2. Add the image you want to use, for example:
+
+```text
+my-course-banner.jpg
+```
+
+::: {.callout-tip}
+A landscape-oriented image works best because the image is cropped automatically to fill the available area.
+:::
+
+
+### 2. Update the image path
+
+1. In the main branch, open the `_sections` folder and then the file `instances-band.qmd`.
+2. Locate: 
+
+```html
+  <img src="img/images/navet-band.png" alt="" class="instances-band__image">
+```
+
+3. Replace `img/images/navet-band.png` with the path to your image, for example:
+
+```html
+<img src="img/images/my-course-banner.jpg" alt="" class="instances-band__image">
+```
+
+The image is decorative, so the `alt` attribute can remain empty.
+
+::: {.callout-tip}
+Check how the image appears at different browser widths. The banner automatically crops the image to fill the available space.
+
+If the most important part of your image is being cropped, you can adjust its position in `styles.css`. Find:
+
+```css
+.instances-band__image {
+  object-fit: cover;
+  object-position: center;
+}
+```
+
+Change `object-position` to move the visible part of the image. For example:
+
+```css
+object-position: center top;
+```
+
+or:
+
+```css
+object-position: 30% center;
+```
+::: 
+
+
+::: {.quick-reference}
+
+<span class="quick-reference-title">Quick reference</span>   
+<span class="quick-reference-subtitle"> Change the course instance banner image </span>  
+
+
+| To... | File | Edit |
+|---|---|---|
+| Add a new banner image | `img/images/` | Add your course image to this folder. |
+| Change the banner image | `_sections/instances-band.qmd` | Replace `img/images/navet-band.png` with the path to your image. |
+| (Optional) Adjust how the image is cropped | `styles.css` | Change `object-position` under `.instances-band__image`. |
 
 :::
 
