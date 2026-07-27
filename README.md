@@ -1,6 +1,6 @@
 # SciLifeLab Course Webpage Template User Guide
 
-This repository contains the use guide for the **[SciLifeLab Course Page Template](https://scilifelab-training.github.io/scilifelab-training-template-staging/)**, a Quarto-based template for creating, publishing, and maintaining reusable training materials with GitHub Pages.
+This repository contains the user guide for the **[SciLifeLab Course Page Template](https://scilifelab-training.github.io/scilifelab-training-template-staging/)**, a Quarto-based template for creating, publishing, and maintaining reusable training materials with GitHub Pages.
 
 ## Read the User Guide
 
@@ -13,7 +13,8 @@ The guide provides step-by-step instructions for:
 - setting up the template for a new course;
 - customising the course landing page;
 - creating and managing course instances;
-- previewing and publishing changes;
+- customising course instance pages; 
+- previewing and publishing changes;  
 - preparing training materials for publication, citation, and reuse.
 
 ## Course Page Template
@@ -60,6 +61,12 @@ Changes and improvements to the User Guide can be made by editing the relevant `
 
 Before committing documentation changes, preview the guide locally to check that pages, links, images, and formatting render as expected.
 
+## Citation
+
+If you re-use the SciLifeLab Course Webpage Template User Guide, please cite as 
+
+Ineke Luijten (2026). The SciLifeLab Course Webpage Template User Guide (v1.0.0-alpha). Zenodo. https://doi.org/XX.XXXX/zenodo.XXXXX
+
 ## Licence
 
-Unless otherwise stated, the SciLifeLab Course Page Template User Guide is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence.
+Unless otherwise stated, the SciLifeLab Course Page Template User Guide is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) licence.
