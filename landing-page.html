@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -76,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-80d458eecc9c93f9f834249666291fd8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-40766f26011dd0955435ccc10f1198e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -201,6 +204,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="./images/SciLifeLab_symbol_green-2048x1950.png" class="guide-logo"></p>
 <p><br></p>
 <p>The <a href="https://scilifelab-training.github.io/scilifelab-training-template-staging/">landing page</a> introduces your course and provides visitors with the information they need to decide whether they want to register for your course or access a course instance.</p>
+<p>The figure below shows the main sections of the landing page and the terminology used throughout this guide.</p>
+<p><img src="images/template-landing-page.png" class="img-fluid" style="width:75.0%" alt="Annotated example of the course landing page showing the template banner, course title and subtitle, organisation logo, hero action buttons, course information cards, course instance banner image, course instances, and page footer."></p>
 <p>In the following sections, you will find how to:</p>
 <ul>
 <li><a href="#remove-the-template-banner">Remove the template banner</a></li>
@@ -208,10 +213,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#hero-add-or-remove-a-logo">Add or remove organisation logos</a></li>
 <li><a href="#hero-configure-the-current-course-instance-and-registration-action-buttons">Configure the hero action buttons</a></li>
 <li><a href="#course-information-cards-edit-text">Edit the course information cards</a></li>
+<li><a href="#change-the-course-instance-banner-image">Change the course instance banner image</a></li>
 <li><a href="#manage-course-instances">Manage course instances</a></li>
 <li><a href="#edit-the-footer">Edit the page footer</a></li>
 </ul>
 <p>Each section in this chapter explains which file to edit and provides step-by-step instructions.</p>
+<p>At the end of each section, you will also find a <strong>Quick reference</strong> box summarising the most important changes. These boxes show you at a glance which file to edit and what to change, and can be useful when you return to the guide after you are already familiar with the individual steps.</p>
 <p><br></p>
 <section id="remove-the-template-banner" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="remove-the-template-banner"><span class="header-section-number">3.1</span> Remove the template banner</h2>
@@ -407,12 +414,12 @@ Tip
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li><p>Delete the entire <code>&lt;div class="hero__brand-item"&gt;...&lt;/div&gt;</code> block.</p></li>
-<li><p>OPTIONAL: If you no longer need the logo image, you can also delete it from the <code>img/logos</code> folder.</p></li>
-</ol>
+<li><p>OPTIONAL: If you no longer need the logo image, you can also delete it from the <code>img/logos</code> folder.</p>
 <ul>
 <li><strong>VS Code:</strong> Right-click the file and select <strong>Delete</strong>.</li>
 <li><strong>GitHub Desktop:</strong> Open the repository, locate the file, click the three dots (<strong>⋮</strong>), and choose <strong>Delete file</strong>.</li>
-</ul>
+</ul></li>
+</ol>
 <div class="quick-reference">
 <p><span class="quick-reference-title"> Quick reference </span><br>
 <span class="quick-reference-subtitle"> Add or remove a logo </span></p>
@@ -471,8 +478,21 @@ Tip
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
-<li>Update <code>slug</code>, <code>label</code>, <code>instance_url</code>, and <code>sort_key</code> to match the current course instance. The values of <code>slug</code> and <code>instance_url</code> must match!</li>
+<li>Update <code>slug</code>, <code>label</code>, <code>instance_url</code>, and <code>sort_key</code> to match the current course instance.</li>
 </ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The values of <code>slug</code> and <code>instance_url</code> must match!</p>
+</div>
+</div>
 <p>For example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances</span><span class="kw">:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"0000"</span></span>
@@ -799,8 +819,103 @@ Tip
 </div>
 </section>
 </section>
-<section id="manage-course-instances" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="manage-course-instances"><span class="header-section-number">3.6</span> Manage course instances</h2>
+<section id="change-the-course-instance-banner-image" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="change-the-course-instance-banner-image"><span class="header-section-number">3.6</span> Change the course instance banner image</h2>
+<p>The <em>All course instances</em> banner contains a decorative image alongside the links to the available course instances. You can replace this image with an image that represents your course.</p>
+<section id="add-your-image" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="add-your-image"><span class="header-section-number">3.6.1</span> 1. Add your image</h3>
+<ol type="1">
+<li>In the main branch, open the <code>img</code> folder and then the <code>images</code> folder.</li>
+<li>Add the image you want to use, for example:</li>
+</ol>
+<pre class="text"><code>my-course-banner.jpg</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A landscape-oriented image works best because the image is cropped automatically to fill the available area.</p>
+</div>
+</div>
+</section>
+<section id="update-the-image-path" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="update-the-image-path"><span class="header-section-number">3.6.2</span> 2. Update the image path</h3>
+<ol type="1">
+<li>In the main branch, open the <code>_sections</code> folder and then the file <code>instances-band.qmd</code>.</li>
+<li>Locate:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"img/images/navet-band.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="ot"> class</span><span class="op">=</span><span class="st">"instances-band__image"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Replace <code>img/images/navet-band.png</code> with the path to your image, for example:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"img/images/my-course-banner.jpg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="ot"> class</span><span class="op">=</span><span class="st">"instances-band__image"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The image is decorative, so the <code>alt</code> attribute can remain empty.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check how the image appears at different browser widths. The banner automatically crops the image to fill the available space.</p>
+<p>If the most important part of your image is being cropped, you can adjust its position in <code>styles.css</code>. Find:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.instances-band__image</span> {</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">object-fit</span><span class="ch">:</span> <span class="dv">cover</span><span class="op">;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">object-position</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Change <code>object-position</code> to move the visible part of the image. For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>object-position<span class="in">:</span> center top;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>object-position<span class="in">:</span> 30% center;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="quick-reference">
+<p><span class="quick-reference-title">Quick reference</span><br>
+<span class="quick-reference-subtitle"> Change the course instance banner image </span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>To…</th>
+<th>File</th>
+<th>Edit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Add a new banner image</td>
+<td><code>img/images/</code></td>
+<td>Add your course image to this folder.</td>
+</tr>
+<tr class="even">
+<td>Change the banner image</td>
+<td><code>_sections/instances-band.qmd</code></td>
+<td>Replace <code>img/images/navet-band.png</code> with the path to your image.</td>
+</tr>
+<tr class="odd">
+<td>(Optional) Adjust how the image is cropped</td>
+<td><code>styles.css</code></td>
+<td>Change <code>object-position</code> under <code>.instances-band__image</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="manage-course-instances" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="manage-course-instances"><span class="header-section-number">3.7</span> Manage course instances</h2>
 <p>The <strong>All course instances</strong> banner provides links to the different published instances of your course. This allows visitors to access the current course instance, as well as previous course instances that you choose to make available.</p>
 <p>Course instances are managed in <code>data/instances.yml</code>. The instance marked as <code>current</code> is also used for the <em>Take me to the current course instance</em> action button in the hero. Some of the settings described in this section therefore overlap with the instructions for <a href="#add-a-link-to-the-current-course-instance-button">configuring the hero buttons</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -817,14 +932,14 @@ Important
 <li><p>Each course instance <strong>must</strong> have a unique <code>slug</code>. Do not use the same <code>slug</code> for more than one instance!</p></li>
 <li><p>Only <strong>one course instance</strong> should be marked as:</p></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>The instance marked as current determines which course instance is treated as the current course throughout the landing page, including the link used by the <a href="#add-a-link-to-the-current-course-instance-button">hero action button</a>. See <a href="#mark-an-instance-as-current">Mark a course instance as current</a> for instructions.</li>
 </ul>
 </div>
 </div>
-<section id="add-a-new-course-instance" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="add-a-new-course-instance"><span class="header-section-number">3.6.1</span> Add a new course instance</h3>
+<section id="add-a-new-course-instance" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="add-a-new-course-instance"><span class="header-section-number">3.7.1</span> Add a new course instance</h3>
 <ol type="1">
 <li>In the main branch, open the <code>data</code> folder and then the file <code>instances.yml</code>.</li>
 <li>Copy a full existing course instance entry.</li>
@@ -832,60 +947,60 @@ Important
 <li>Update the <code>slug</code>, <code>label</code>, <code>instance_url</code> and <code>sort key</code> values to describe the new course instance.</li>
 </ol>
 <p>For example, for a new course instance taught in November 2026:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2611"</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2611/"</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.org/registration"</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202611</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2611"</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2611/"</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.org/registration"</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202611</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="mark-a-course-instance-as-current" class="level3" data-number="3.6.2">
-<h3 data-number="3.6.2" class="anchored" data-anchor-id="mark-a-course-instance-as-current"><span class="header-section-number">3.6.2</span> Mark a course instance as current</h3>
+<section id="mark-a-course-instance-as-current" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="mark-a-course-instance-as-current"><span class="header-section-number">3.7.2</span> Mark a course instance as current</h3>
 <ol type="1">
 <li>In the main branch, open the <code>data</code> folder and then the file <code>instances.yml</code>.</li>
 <li>Find the previous current instance.</li>
 <li>Change:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>to:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> previous</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> previous</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Set the new current instance to:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances</span><span class="kw">:</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2611"</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2611/"</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.org/registration"</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202611</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2605"</span></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2026"</span></span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">status</span><span class="kw">:</span><span class="at"> previous</span></span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2605/"</span></span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202605</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances</span><span class="kw">:</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2611"</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2611/"</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.org/registration"</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202611</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2605"</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2026"</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">status</span><span class="kw">:</span><span class="at"> previous</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2605/"</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202605</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="show-or-hide-a-previous-instance-in-the-all-course-instances-banner" class="level3" data-number="3.6.3">
-<h3 data-number="3.6.3" class="anchored" data-anchor-id="show-or-hide-a-previous-instance-in-the-all-course-instances-banner"><span class="header-section-number">3.6.3</span> Show or hide a previous instance in the <em>All course instances</em> banner</h3>
+<section id="show-or-hide-a-previous-instance-in-the-all-course-instances-banner" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="show-or-hide-a-previous-instance-in-the-all-course-instances-banner"><span class="header-section-number">3.7.3</span> Show or hide a previous instance in the <em>All course instances</em> banner</h3>
 <ol type="1">
 <li>In the main branch, open the <code>data</code> folder and then the file <code>instances.yml</code>.</li>
 <li>To display an instance in the banner:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>To hide an instance in the banner:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Hiding an instance does not delete it from <code>instances.yml</code>. It simply prevents it from being displayed in the banner.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -898,28 +1013,28 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>The instance marked as:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>must always remain:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Do not hide the current course instance by setting <code>visible: false</code>. If you do not want the current instance to appear as a button in the hero, use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>instead.</p>
 </div>
 </div>
 </section>
-<section id="change-the-course-instance-name-displayed-in-the-banner" class="level3" data-number="3.6.4">
-<h3 data-number="3.6.4" class="anchored" data-anchor-id="change-the-course-instance-name-displayed-in-the-banner"><span class="header-section-number">3.6.4</span> Change the course instance name displayed in the banner</h3>
+<section id="change-the-course-instance-name-displayed-in-the-banner" class="level3" data-number="3.7.4">
+<h3 data-number="3.7.4" class="anchored" data-anchor-id="change-the-course-instance-name-displayed-in-the-banner"><span class="header-section-number">3.7.4</span> Change the course instance name displayed in the banner</h3>
 <ol type="1">
 <li>In the main branch, open the <code>data</code> folder and then the file <code>instances.yml</code>.</li>
 <li>Change the value for <code>label</code> For example:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2026"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2026"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>can be changed to:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Changing the label only changes the text visitors see. It does not change the course instance URL.</p>
 </section>
-<section id="change-the-order-of-course-instances" class="level3" data-number="3.6.5">
-<h3 data-number="3.6.5" class="anchored" data-anchor-id="change-the-order-of-course-instances"><span class="header-section-number">3.6.5</span> Change the order of course instances</h3>
+<section id="change-the-order-of-course-instances" class="level3" data-number="3.7.5">
+<h3 data-number="3.7.5" class="anchored" data-anchor-id="change-the-order-of-course-instances"><span class="header-section-number">3.7.5</span> Change the order of course instances</h3>
 <p>The <code>sort_key</code> determines the chronological order of the course instances.</p>
 <ol type="1">
 <li>In the main branch, open the <code>data</code> folder and then the file <code>instances.yml</code>.</li>
@@ -927,7 +1042,7 @@ Important
 </ol>
 <pre class="text"><code>YYYYMM</code></pre>
 <p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202605</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202605</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>represents May 2026.</p>
 <div class="quick-reference">
 <p><span class="quick-reference-title">Quick reference</span><br>
@@ -976,18 +1091,18 @@ Important
 </div>
 </section>
 </section>
-<section id="edit-the-footer" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="edit-the-footer"><span class="header-section-number">3.7</span> Edit the footer</h2>
+<section id="edit-the-footer" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="edit-the-footer"><span class="header-section-number">3.8</span> Edit the footer</h2>
 <p>The footer at the bottom of the landing page contains information about the course page development, its licence, and a link to the course repository on GitHub.</p>
-<section id="change-the-footer-text" class="level3" data-number="3.7.1">
-<h3 data-number="3.7.1" class="anchored" data-anchor-id="change-the-footer-text"><span class="header-section-number">3.7.1</span> Change the footer text</h3>
+<section id="change-the-footer-text" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="change-the-footer-text"><span class="header-section-number">3.8.1</span> Change the footer text</h3>
 <ol type="1">
 <li>In the main branch, open the <code>_sections</code> folder and then the file <code>footer.qmd</code>.</li>
 <li>Locate:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>By SciLifeLab Training Hub. Licensed under <span class="co">[</span><span class="ot">CC BY 4.0</span><span class="co">](https://creativecommons.org/licenses/by/4.0/)</span>.</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>Built with Quarto and hosted on GitHub Pages.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>By SciLifeLab Training Hub. Licensed under <span class="co">[</span><span class="ot">CC BY 4.0</span><span class="co">](https://creativecommons.org/licenses/by/4.0/)</span>.</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>Built with Quarto and hosted on GitHub Pages.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Replace the text with the information you want to display in the footer.</li>
 </ol>
@@ -1010,19 +1125,19 @@ Tip
 </div>
 </div>
 </section>
-<section id="change-the-github-repository-link" class="level3" data-number="3.7.2">
-<h3 data-number="3.7.2" class="anchored" data-anchor-id="change-the-github-repository-link"><span class="header-section-number">3.7.2</span> Change the GitHub repository link</h3>
+<section id="change-the-github-repository-link" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="change-the-github-repository-link"><span class="header-section-number">3.8.2</span> Change the GitHub repository link</h3>
 <p>The GitHub logo in the footer links visitors to the course repository.</p>
 <ol type="1">
 <li>In the main branch, open the <code>_sections</code> folder and then the file <code>footer.qmd</code>.</li>
 <li>Locate:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://github.com/SciLifeLab-Training/scilifelab-training-template-staging/tree/main"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"landing-footer__image-link"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://github.com/SciLifeLab-Training/scilifelab-training-template-staging/tree/main"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"landing-footer__image-link"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Replace only the URL inside <code>href="..."</code> with the URL of your course repository.</li>
 </ol>
 <p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://github.com/your-organisation/your-course/tree/main"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"landing-footer__image-link"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://github.com/your-organisation/your-course/tree/main"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"landing-footer__image-link"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quick-reference">
 <p><span class="quick-reference-title">Quick reference</span><br>
 <span class="quick-reference-subtitle"> Edit the footer </span></p>
