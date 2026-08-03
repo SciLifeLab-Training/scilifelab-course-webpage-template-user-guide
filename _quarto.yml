@@ -6,7 +6,9 @@ book:
   chapters:
     - index.qmd
     - getting-started.qmd
+    - repository-structure.qmd
     - landing-page.qmd
+    - course-instances.qmd
     - fairification.qmd
 
 format:

@@ -1,181 +1,274 @@
-# Getting started
+---
+title: "Getting started"
+---
+<img src="/images/SciLifeLab_symbol_green-2048x1950.png"
+     class="guide-logo">
 
-This guide assumes you have:
+<br>
 
-- cloned the repository
-- created a Python virtual environment
-- installed the project dependencies
+The SciLifeLab Course Page Template provides the structure and configuration needed to create and publish your course website using Quarto and GitHub Pages.
 
-To preview the landing page locally:
+This chapter will guide you through creating your own course repository from the template, setting up the repository on your computer, and previewing the course website locally.
+
+By the end of this chapter, the user has their own repository, can edit it locally, preview it, and publish their first change.
+
+You do not need to be familiar with Git, GitHub, or Quarto to get started. The steps below explain which actions to take and where to find the relevant settings.
+
+## Create accounts 
+
+
+## Create a repository from the template
+
+The first step is to create an independent copy of the SciLifeLab Course Webpage Template for your own course. Changes you make in your new repository will not affect the original template.
+
+### Open the template repository
+
+In your web browser, open the [SciLifeLab Course Webpage Template](https://github.com/SciLifeLab-Training/scilifelab-training-template-staging/tree/main).
+
+Click the green **Use this template button** on the top right. Select **Create a new repository**.
+
+<span style="color: red; font-weight: bold;">image:  fig-alt="GitHub repository page showing the Use this template button."</span>
+
+
+### Configure your new repository
+
+GitHub will open the **Create a new repository** page.
+
+1. At the top, make sure to set `Include all branches` to **on** 
+
+2. Under **Owner**, select the GitHub organisation or account where the course repository should be hosted (e.g. SciLifeLabDataCentre, SciLifeLab-Training, NBISweden, stockholmuniversity, or your personal account).
+
+::: {.callout-note}
+To create a repository within a GitHub organisation account, you need to be a member of the organisation account and have permission to create repositories. If the organisation you need does not appear under **Owner**, contact an administrator or owner of that organisation account.
+:::
+
+2. Under **Repository name**, enter a name for your course repository. Use lowercase letters where possible and use hyphens (`-`) instead of spaces, for example `introduction-to-r`.
+
+::: {.callout-tip}
+Choose the repository name carefully. The repository name becomes part of the URL of your published course website.
+:::
+
+3. Optionally, add a short description of the course.
+
+5. Choose the repository **visibility**. For a course website containing training materials that should be openly accessible, select **Public**. Only select **Private** if access to the repository and course materials needs to be restricted.
+
+6. Click `Create repository`
+
+<span style="color: red; font-weight: bold;">image: fig-alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options.</span>
+
+### Check your new repository
+
+GitHub will create the repository and take you to its main page.
+
+Check the repository name at the top of the page to make sure you are now working in **your new course repository**, rather than the original SciLifeLab Course Page Template repository.
+
+<span style="color: red; font-weight: bold;"> image: fig-alt="GitHub page showing a newly created repository based on the course page template."</span>
+
+
+### Add collaborators
+
+If other people will help develop or maintain the course, you can give them access to the repository.
+
+You can also return to this step later if you do not yet know who will contribute to the course.
+
+1. In your course repository, select **Settings** in the repository navigation bar.
+
+Under **Access** in the menu on the left, select **Collaborators and teams**.
+
+<span style="color: red; font-weight: bold;">fig-alt="GitHub repository settings with Collaborators and teams selected under Access."</span>
+
+
+2. Select **Add people** or **Add teams**, depending on who you want to give access to.
+
+- Search for the GitHub user or team you want to add.
+- Select the appropriate repository role.
+- Confirm that you want to add the person or team.
+
+::: {.callout-note}
+The options available under **Collaborators and teams** depend on whether the repository belongs to a personal GitHub account or a GitHub organisation, and on your permissions within that organisation.
+:::
+
+
+
+## Clone the repository to your computer
+
+You now have your course repository on GitHub. The next step is to create a copy of the repository on your computer so that you can edit, preview, and test the course website locally.
+
+Creating a local copy of a GitHub repository is called **cloning**.
+
+Changes you make to this local copy remain on your computer until you **commit** and **push** them back to GitHub. This allows you to experiment, preview your changes, and fix any mistakes before they become visible to collaborators or visitors to your course website.
+
+### Copy the repository URL
+
+On the main page of your course repository, click the green **Code** button.
+
+Make sure **HTTPS** is selected, then copy the repository URL.
+
+<span style="color: red; font-weight: bold;">Screenshot: GitHub Code menu showing the HTTPS repository URL.</span>
+
+### Choose where to store the repository
+
+Decide where you would like to keep your GitHub repositories on your computer. A common choice is to create a folder called `GitHub` inside your `Documents` folder.
+
+To clone the repository into this location, you will use the terminal.
+
+1. Open a terminal and navigate to the folder where you want to store your GitHub repositories.
+
+For example, to use a `GitHub` folder inside `Documents` on macOS:
+
+```bash
+cd ~/Documents/GitHub
+```
+
+<span style="color: red; font-weight: bold;">Screenshot: Terminal showing the command above.</span>
+
+::: {.callout-tip}
+You only need to choose this location once. When you clone the repository, Git will automatically create a new folder with the repository name inside this location.
+:::
+
+
+2. After thism you will clone the repository. In your terminal,  run: 
+
+```bash
+git clone REPOSITORY-URL
+```
+
+Replace `REPOSITORY-URL` with the HTTPS URL you copied from GitHub.
+
+For example:
+
+```bash
+git clone https://github.com/ORGANISATION/my-course.git
+```
+
+<span style="color: red; font-weight: bold;">Screenshot: Terminal showing the completed `git clone` command.</span>
+
+Git will create a new folder containing your course repository.
+
+
+## Open the repository in VS Code
+
+Open **Visual Studio Code** and select:
+
+**File → Open Folder...**
+
+Navigate to the repository you just cloned and select the repository folder.
+
+<span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Open Folder dialog with the cloned repository selected.</span>
+
+The repository files and folders should now appear in the **Explorer** panel on the left. You are now ready to set up the local environment you need to edit and preview your course website locally.
+
+
+## Set up the local environment
+
+Before previewing the course website, set up the Python environment and install the dependencies used by the template.
+
+In VS Code, open a terminal using:
+
+**Terminal → New Terminal**
+
+The terminal should open in the root directory of your course repository.
+
+
+### 1. Create a virtual environment
+
+Run:
+
+```bash
+python3 -m venv .venv
+```
+
+This creates a Python virtual environment specifically for this repository.
+
+
+### 2. Activate the virtual environment
+
+On macOS or Linux, run:
+
+```bash
+source .venv/bin/activate
+```
+
+When the environment is active, you should see `(.venv)` at the beginning of the terminal prompt.
+
+For example:
+
+```text
+(.venv) username@computer my-course %
+```
+
+
+### 3. Install the required dependencies
+
+Run:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements-dev.txt
+```
+
+This installs the Python packages needed to generate, validate, and work on the course website.
+
+
+## Preview the landing page 
+localhost
+automatic reloading
+Ctrl+C
+second terminal
+
+
+You can now preview the landing page on your computer.
+
+Run:
 
 ```bash
 quarto preview
 ```
 
-::: {.callout-tip}
-Use a white logo if possible.
-:::
+Quarto will render the website and start a local preview server. The terminal will display an address similar to:
 
-
-
-
-
-# The SciLifeLab Course Template
-
-This repository publishes one website with two layers:
-
-- the landing page at the root
-- one subdirectory per course instance
-
-Examples:
-
-- `main` publishes the landing page to `/`
-- `release-0000` publishes the course instance to `/0000/`
-- `release-2505` publishes the course instance to `/2505/`
-
-## The Simple Model
-
-- `main` = landing page source
-- `release-YYMM` = one course instance
-- `gh-pages` = published output only
-
-Use `main` when you want to change the landing page.
-
-Use a `release-YYMM` branch when you want to change the actual course materials for one run.
-
-Do not work directly on `gh-pages` unless you are recovering from a deployment problem.
-
-## What Gets Deployed
-
-1. Push to `main`
-   - GitHub Actions renders the landing page.
-   - The landing is published to the root of `gh-pages`.
-2. Push to `release-YYMM`
-   - GitHub Actions renders that course instance.
-   - The instance is published to `gh-pages/YYMM/`.
-
-The landing page does not auto-discover release branches. If you create a new instance branch, you must also update `data/instances.yml` on `main` if you want that instance to appear on the landing page.
-
-## Which Files To Edit
-
-### Landing page on `main`
-
-Edit these files for most landing-page changes:
-
-- `index.qmd`: top-level page shell
-- `_sections/*.qmd`: authored landing sections
-- `styles.css`: landing design and layout
-- `data/instances.yml`: current/previous instance links and visibility
-- `data/ui.yml`: landing UI labels
-
-Dynamic partials are generated automatically:
-
-- `_generated/hero-actions.qmd`
-- `_generated/instances-band.qmd`
-
-Do not edit `_generated/*` manually.
-
-### Course instance on `release-YYMM`
-
-Edit the Quarto course files on that branch:
-
-- course `.qmd` pages
-- branch-local `_quarto.yml`
-- images and other branch-local course assets
-
-## Common Workflows
-
-### 1. Change the landing page
-
-1. Work on `main`.
-2. Edit the landing sections, styles, or landing data.
-3. Run local checks:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements-dev.txt
-python -m pytest -q
-quarto render
+```text
+http://localhost:XXXX/
 ```
 
-4. Push `main`.
-5. GitHub Actions publishes the updated landing root.
+Open this address in your web browser if the preview does not open automatically.
 
-### 2. Create a new course instance
+![The SciLifeLab Course Page Template running as a local preview.](images/getting-started-local-preview.png){width=85% fig-align="center" fig-alt="Course landing page displayed locally in a web browser using Quarto preview."}
 
-1. Create a new branch from `release-0000`.
-2. Name it `release-YYMM`, for example `release-2505`.
-3. Update the course content on that branch.
-4. Push the branch.
-5. GitHub Actions publishes that instance to `gh-pages/YYMM/`.
-6. Update `data/instances.yml` on `main` so the landing page links to it.
+You are now viewing a local version of the course website. Changes you make to the landing-page files can be checked here before you publish them to GitHub.
 
-### 3. Update an existing course instance
+::: {.callout-tip}
+While `quarto preview` is running, the terminal is being used by the preview server. If you need to run other commands without stopping the preview, open a **second terminal** in VS Code.
 
-1. Checkout the relevant `release-YYMM` branch.
-2. Edit the course materials.
-3. Push the branch.
-4. GitHub Actions republishes only that instance directory.
+To stop the preview server, return to the terminal in which it is running and press **Ctrl+C**.
+:::
 
-### 4. Change which instance is current on the landing page
+## Make your first change 
 
-Edit `data/instances.yml` on `main`.
+Change the course title.
+Save
+Refresh browser
 
-Rules enforced by validation:
+## Commit and push
 
-- exactly one instance must have `status: current`
-- the current instance must have `visible: true`
-- relative instance URLs must match the slug
+Open Source Control
+Stage
+Commit
+Sync / Push
 
-## How The Landing Is Built
 
-The landing page is built in three layers:
+## View the published website 
 
-1. Authored content
-   - `index.qmd`
-   - `_sections/*.qmd`
-2. Data and generated fragments
-   - `data/instances.yml`
-   - `data/ui.yml`
-   - `scripts/generate_landing.py`
-   - `_generated/*.qmd`
-3. Presentation
-   - `styles.css`
+When you push to main, GitHub automatically rebuilds and republishes the landing page.
+Then show
+Actions tab
+green checkmark
+Pages
 
-Render flow:
+## Next steps
 
-1. `quarto render` starts
-2. Quarto runs `scripts/generate_landing.py` as a pre-render step
-3. the generator validates YAML data and writes `_generated/*.qmd`
-4. `index.qmd` includes the authored sections
-5. those sections include the generated fragments where needed
-6. Quarto writes the final site to `_site/`
-
-## GitHub Actions
-
-- `.github/workflows/validate-landing.yml`
-  - runs on pull requests to `main`
-  - runs tests, renders the landing, and checks that no raw YAML leaks into `_site`
-
-- `.github/workflows/deploy-landing.yml`
-  - runs on push to `main`
-  - publishes only landing-owned root files to `gh-pages`
-
-- `.github/workflows/main.yml` on `release-*` branches
-  - runs on push to release branches
-  - publishes only the matching instance directory to `gh-pages`
-
-## Important Rules
-
-- `gh-pages` is machine-managed output
-- keep `.nojekyll` on `gh-pages`
-- never use a root-level deploy sync like `rsync -a --delete _site/ gh-pages/`
-- keep raw YAML out of published output
-- update `data/instances.yml` on `main` when instance visibility changes
-
-## Additional Docs
-
-- `docs/landing-runbook.md`
-- `docs/landing-migration-map.md`
+Congratulations! You now have your own copy of the SciLifeLab Course Page Template running locally and published through GitHub Pages.
+Continue with:
+Landing page to customise the landing page.
+Course instances to create and manage course instances.
+FAIRification to prepare your training materials for publication and reuse.

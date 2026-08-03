@@ -1,0 +1,20 @@
+---
+title: "Repository structure"
+---
+
+
+
+## Branches
+By default, GitHub displays the `main` branch. This branch contains the course landing page and general information about your course.
+
+The template also contains additional branches used for course instances and publication. You will work with these later in the guide.
+
+::: {.callout-note}
+The course website uses different branches for different purposes:
+
+- `main` contains the course landing page and general course information.
+- Course instance branches contain the training materials for individual course runs.
+- `gh-pages` contains the published website and is managed automatically.
+
+You should not edit the `gh-pages` branch directly.
+:::
