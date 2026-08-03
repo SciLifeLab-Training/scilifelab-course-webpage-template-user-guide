@@ -101,3 +101,14 @@ table {
     color: #3f3a35;
     font-weight: 700;
 }
+
+
+.guide-footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.guide-footer p {
+  margin-bottom: 0.5rem;
+}
