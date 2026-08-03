@@ -6,26 +6,84 @@ title: "Getting started"
 
 <br>
 
-The SciLifeLab Course Page Template provides the structure and configuration needed to create and publish your course website using Quarto and GitHub Pages.
+This chapter explains how to create your own copy of the SciLifeLab Course Page Template, set it up on your computer, and publish your first changes. By the end of it, you will have your own course repository, be able to edit and preview the course website locally, and know how to publish updates to GitHub.
 
-This chapter will guide you through creating your own course repository from the template, setting up the repository on your computer, and previewing the course website locally.
+You do not need prior experience with Git, GitHub, Visual Studio Code, or Quarto. Each section provides step-by-step instructions to help you get your course website up and running.
 
-By the end of this chapter, the user has their own repository, can edit it locally, preview it, and publish their first change.
+In the following sections, you will learn how to:
 
-You do not need to be familiar with Git, GitHub, or Quarto to get started. The steps below explain which actions to take and where to find the relevant settings.
+
+- [Create the required accounts](#create-accounts)
+- [Create a repository from the template](#create-a-repository-from-the-template)
+- [Clone the repository to your computer](#clone-the-repository-to-your-computer)
+- [Open the repository in Visual Studio Code](#open-the-repository-in-visual-studio-code)
+- [Set up the local environment](#set-up-the-local-environment)
+- [Preview the course website locally](#preview-the-course-website)
+- [Commit and push your changes](#commit-and-push-your-changes)
+- [View the published website](#view-the-published-website)
+
+Each section explains what to do, where to do it, and what you should expect to see before moving on to the next step.
+
+At the end of each section, you will also find a **Quick reference** box summarising the key steps. These boxes provide a quick reminder of the files, tools, or actions involved and are useful when you return to the guide after completing the initial setup.
+
 
 ## Create accounts 
 
+Before creating your course repository, make sure you have access to the software and accounts needed to work with the SciLifeLab Course Page Template.
+
+### 1. Create a GitHub account
+
+GitHub is used to store your course repository, collaborate with others, and publish your course website.
+
+If you do not already have a GitHub account:
+
+1. Visit <https://github.com>.
+2. Click **Sign up**.
+3. Follow the instructions to create an account.
+
+If your course repository will be hosted within a GitHub organisation (for example **[SciLifeLab-Training](https://github.com/SciLifeLab-Training)**, **[SciLifeLabDataCentre](https://github.com/ScilifelabDataCentre)**, or **[NBISweden](https://github.com/NBISweden)**), ask an organisation administrator to add your GitHub account as a member before continuing.
+
+<span style="color: red; font-weight: bold;">Screenshot: GitHub sign-up page.</span>
+
+### 2. Install Visual Studio Code
+
+Visual Studio Code (VS Code) is the editor used throughout this guide to edit and preview the course website.
+
+If you do not already have VS Code installed:
+
+1. Visit <https://code.visualstudio.com/>.
+2. Download the version for your operating system.
+3. Follow the installation instructions.
+
+After installation, open VS Code once to check that it starts correctly.
+
+<span style="color: red; font-weight: bold;">Screenshot: Visual Studio Code download page.</span>
+
+::: {.callout-tip}
+Throughout this guide, all file editing and Git operations are demonstrated using Visual Studio Code. You may use a different editor if you prefer, but the instructions and screenshots assume you are using VS Code.
+:::
+
+::: {.quick-reference}
+
+<span class="quick-reference-title">Quick reference</span>   
+<span class="quick-reference-subtitle"> Create accounts </span>
+
+| To... | Visit |
+|---|---|
+| Create a GitHub account | <https://github.com> |
+| Download Visual Studio Code | <https://code.visualstudio.com/> |
+
+:::
 
 ## Create a repository from the template
 
-The first step is to create an independent copy of the SciLifeLab Course Webpage Template for your own course. Changes you make in your new repository will not affect the original template.
+The first step is to create your own copy of the SciLifeLab Course Webpage Template. This creates a new repository for your course, while leaving the original template unchanged.
 
 ### Open the template repository
 
 In your web browser, open the [SciLifeLab Course Webpage Template](https://github.com/SciLifeLab-Training/scilifelab-training-template-staging/tree/main).
 
-Click the green **Use this template button** on the top right. Select **Create a new repository**.
+In the top-right corner of the page, click the green **Use this template** button and select **Create a new repository**.
 
 <span style="color: red; font-weight: bold;">image:  fig-alt="GitHub repository page showing the Use this template button."</span>
 
@@ -34,31 +92,31 @@ Click the green **Use this template button** on the top right. Select **Create a
 
 GitHub will open the **Create a new repository** page.
 
-1. At the top, make sure to set `Include all branches` to **on** 
+1. At the top of the page, make sure **Include all branches** is turned **on**.
 
-2. Under **Owner**, select the GitHub organisation or account where the course repository should be hosted (e.g. SciLifeLabDataCentre, SciLifeLab-Training, NBISweden, stockholmuniversity, or your personal account).
+2. Under **Owner**, select the GitHub organisation or account where the course repository should be hosted (e.g. SciLifeLabDataCentre, SciLifeLab-Training, NBISweden, Stockholm University, or your personal GitHub account).
 
 ::: {.callout-note}
-To create a repository within a GitHub organisation account, you need to be a member of the organisation account and have permission to create repositories. If the organisation you need does not appear under **Owner**, contact an administrator or owner of that organisation account.
+If the organisation you need does not appear under **Owner**, contact an administrator or owner of that organisation to request access.
 :::
 
-2. Under **Repository name**, enter a name for your course repository. Use lowercase letters where possible and use hyphens (`-`) instead of spaces, for example `introduction-to-r`.
+3. Under **Repository name**, enter a name for your course repository. Use lowercase letters where possible and separate words with hyphens (`-`), for example `introduction-to-r`.
 
 ::: {.callout-tip}
 Choose the repository name carefully. The repository name becomes part of the URL of your published course website.
 :::
 
-3. Optionally, add a short description of the course.
+4. Optionally, add a short description of your course.
 
-5. Choose the repository **visibility**. For a course website containing training materials that should be openly accessible, select **Public**. Only select **Private** if access to the repository and course materials needs to be restricted.
+5. Choose the repository **visibility**. For most courses, select **Public** so that the course website and training materials can be accessed by others. Select **Private** only if access to the repository and course materials should be restricted.
 
-6. Click `Create repository`
+6. Click **Create repository**.
 
 <span style="color: red; font-weight: bold;">image: fig-alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options.</span>
 
 ### Check your new repository
 
-GitHub will create the repository and take you to its main page.
+GitHub will create the repository and automatically open its main page.
 
 Check the repository name at the top of the page to make sure you are now working in **your new course repository**, rather than the original SciLifeLab Course Page Template repository.
 
@@ -67,36 +125,50 @@ Check the repository name at the top of the page to make sure you are now workin
 
 ### Add collaborators
 
-If other people will help develop or maintain the course, you can give them access to the repository.
+If other people will help develop or maintain the course, you can give them access to the repository. If you do not yet know who will contribute, you can return to this step later.
 
-You can also return to this step later if you do not yet know who will contribute to the course.
+1. In your course repository, click **Settings**.
 
-1. In your course repository, select **Settings** in the repository navigation bar.
-
-Under **Access** in the menu on the left, select **Collaborators and teams**.
+2. Under **Access** in the menu on the left, click **Collaborators and teams**.
 
 <span style="color: red; font-weight: bold;">fig-alt="GitHub repository settings with Collaborators and teams selected under Access."</span>
 
+3. Click **Add people** or **Add teams**, depending on who you want to give access to.
 
-2. Select **Add people** or **Add teams**, depending on who you want to give access to.
-
-- Search for the GitHub user or team you want to add.
+- Search for the GitHub user or team.
 - Select the appropriate repository role.
-- Confirm that you want to add the person or team.
+- Click **Add** to confirm.
 
 ::: {.callout-note}
 The options available under **Collaborators and teams** depend on whether the repository belongs to a personal GitHub account or a GitHub organisation, and on your permissions within that organisation.
 :::
 
+Your course repository is now ready to use. In the next section, you will create a local copy of the repository on your computer so that you can begin editing the course website.
+
+::: {.quick-reference}
+
+<span class="quick-reference-title">Quick reference</span>   
+<span class="quick-reference-subtitle"> Create a repository from the template </span>
+
+| To... | Location | Action |
+|---|---|---|
+| Create a new course repository | SciLifeLab Course Page Template | Click **Use this template** → **Create a new repository**. |
+| Copy all template branches | Repository creation page | Turn **Include all branches** **on**. |
+| Choose where to create the repository | **Owner** | Select your GitHub organisation or personal account. |
+| Name the repository | **Repository name** | Use lowercase letters and hyphens (`-`) instead of spaces. |
+| Choose the repository visibility | **Visibility** | Select **Public** for most course websites. |
+| Add collaborators | **Settings** → **Collaborators and teams** | Add people or teams and assign the appropriate role. |
+
+:::
 
 
 ## Clone the repository to your computer
 
-You now have your course repository on GitHub. The next step is to create a copy of the repository on your computer so that you can edit, preview, and test the course website locally.
+You now have your course repository on GitHub. The next step is to create a copy of it on your computer so that you can edit, preview, and test the course website locally.
 
-Creating a local copy of a GitHub repository is called **cloning**.
+Creating a copy of a GitHub repository on your computer is called **cloning**.
 
-Changes you make to this local copy remain on your computer until you **commit** and **push** them back to GitHub. This allows you to experiment, preview your changes, and fix any mistakes before they become visible to collaborators or visitors to your course website.
+Any changes you make remain on your computer until you **commit** and **push** them back to GitHub. This gives you the opportunity to preview your changes, experiment safely, and fix any mistakes before they become visible to collaborators or visitors to your course website.
 
 ### Copy the repository URL
 
@@ -106,15 +178,15 @@ Make sure **HTTPS** is selected, then copy the repository URL.
 
 <span style="color: red; font-weight: bold;">Screenshot: GitHub Code menu showing the HTTPS repository URL.</span>
 
-### Choose where to store the repository
+### Clone the repository
 
-Decide where you would like to keep your GitHub repositories on your computer. A common choice is to create a folder called `GitHub` inside your `Documents` folder.
+First, decide where you would like to keep your GitHub repositories on your computer. A common choice is to create a folder called `GitHub` inside your `Documents` folder.
 
-To clone the repository into this location, you will use the terminal.
+You will then use a terminal to navigate to this location and clone the repository.
 
-1. Open a terminal and navigate to the folder where you want to store your GitHub repositories.
+1. To navigate to your chosen folder, open a terminal and use the command `cd` 
 
-For example, to use a `GitHub` folder inside `Documents` on macOS:
+For example, to use a `GitHub` folder inside `Documents` on macOS, copy and paste the following into the terminal:
 
 ```bash
 cd ~/Documents/GitHub
@@ -127,7 +199,7 @@ You only need to choose this location once. When you clone the repository, Git w
 :::
 
 
-2. After thism you will clone the repository. In your terminal,  run: 
+2. To then clone your new repository into this folder, copy and paste the following into your terminal: 
 
 ```bash
 git clone REPOSITORY-URL
@@ -143,53 +215,86 @@ git clone https://github.com/ORGANISATION/my-course.git
 
 <span style="color: red; font-weight: bold;">Screenshot: Terminal showing the completed `git clone` command.</span>
 
-Git will create a new folder containing your course repository.
+Git will download the repository and create a new folder containing all of the files needed for your course website.
+
+You now have a local copy of your course repository. In the next section, you will open it in Visual Studio Code and prepare it for editing.
+
+::: {.quick-reference}
+
+<span class="quick-reference-title">Quick reference</span>   
+<span class="quick-reference-subtitle"> Clone the repository to your computer </span>
+
+| To... | Tool | Action |
+|---|---|---|
+| Copy the repository URL | GitHub | Click **Code**, select **HTTPS**, and copy the repository URL. |
+| Choose where to store the repository | Terminal | Navigate to the folder where you want to keep your GitHub repositories. |
+| Clone the repository | Terminal | Run `git clone REPOSITORY-URL`. |
+| Verify the repository was cloned | File Explorer/Finder | Check that a new folder with your repository name has been created. |
+
+:::
 
 
-## Open the repository in VS Code
+## Open the repository in Visual Studio Code
 
-Open **Visual Studio Code** and select:
+Throughout this guide, you will use **Visual Studio Code (VS Code)**  to edit your course website, preview your changes, and manage the repository.
 
+To open your new repository in VS Code:   
+  
+1. Open **Visual Studio Code**.
+2. From the menu bar, select:
 **File → Open Folder...**
-
-Navigate to the repository you just cloned and select the repository folder.
+3. Navigate to the repository you just cloned, select the repository folder, and click **Open**.
 
 <span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Open Folder dialog with the cloned repository selected.</span>
 
-The repository files and folders should now appear in the **Explorer** panel on the left. You are now ready to set up the local environment you need to edit and preview your course website locally.
+The files and folders in your repository should now appear in the **Explorer** panel on the left-hand side of the window.
 
+Throughout this guide, you will edit files by selecting them from the Explorer.
+
+<span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Explorer panel with the repository opened.</span>
+
+You are now ready to set up the local environment needed to edit and preview your course website.
+
+::: {.quick-reference}
+
+<span class="quick-reference-title">Quick reference</span>   
+<span class="quick-reference-subtitle"> Open the repository in VS Code </span>
+
+| To... | Tool | Action |
+|---|---|---|
+| Open the repository | Visual Studio Code | Select **File → Open Folder...** and choose your repository folder. |
+| Browse the repository files | Explorer panel | Use the Explorer to open and edit files throughout this guide. |
+
+:::
 
 ## Set up the local environment
 
-Before previewing the course website, set up the Python environment and install the dependencies used by the template.
+Before you can preview and edit your course website in VS Code, you need to prepare the local environment on your computer.
+For this, you can simply copy and paste the commands below into the terminal exactly as shown.
 
-In VS Code, open a terminal using:
+### Open a terminal
+To open a terminal in VS Code, select 
+**Terminal → New Terminal**. 
 
-**Terminal → New Terminal**
+A terminal should open at the bottom of the VS Code window. 
 
-The terminal should open in the root directory of your course repository.
+<span style="color: red; font-weight: bold;">Screenshot: VS Code showing Terminal → New Terminal.</span>
 
-
-### 1. Create a virtual environment
-
-Run:
+### Create a virtual environment
+Copy and paste the following command into the terminal, then press **Enter**.
 
 ```bash
 python3 -m venv .venv
 ```
 
-This creates a Python virtual environment specifically for this repository.
-
-
-### 2. Activate the virtual environment
-
-On macOS or Linux, run:
+### Activate the virtual environment
+Next, copy and paste the following command into the terminal, and press **Enter**: 
 
 ```bash
 source .venv/bin/activate
 ```
 
-When the environment is active, you should see `(.venv)` at the beginning of the terminal prompt.
+If the command was successful, you should see `(.venv)` at the beginning of the terminal prompt.
 
 For example:
 
@@ -197,65 +302,187 @@ For example:
 (.venv) username@computer my-course %
 ```
 
+<span style="color: red; font-weight: bold;">Screenshot: Terminal showing (.venv) at the beginning of the prompt.</span>
 
-### 3. Install the required dependencies
-
-Run:
+### 3. Install the required software
+Finally, copy and paste the following commands into the terminal, and press **Enter**: 
 
 ```bash
 python -m pip install --upgrade pip
 python -m pip install -r requirements-dev.txt
 ```
+This may take a minute or two. Once the installation is complete, your local environment is ready and you can preview your course website.
 
-This installs the Python packages needed to generate, validate, and work on the course website.
+::: {.callout-tip}
+You only need to create the virtual environment and install the required software once for each course repository.
 
+The next time you work on the repository, simply open a terminal in VS Code and reactivate the virtual environment by running:
 
-## Preview the landing page 
-localhost
-automatic reloading
-Ctrl+C
-second terminal
+```bash
+source .venv/bin/activate
+```
 
+You should again see `(.venv)` at the beginning of the terminal prompt.
+:::
 
-You can now preview the landing page on your computer.
+::: {.quick-reference}
 
-Run:
+<span class="quick-reference-title">Quick reference</span>   
+<span class="quick-reference-subtitle"> Set up the local environment </span>
+
+| To... | Tool | Action |
+|---|---|---|
+| Open a terminal | Visual Studio Code | Select **Terminal → New Terminal**. |
+| Create the virtual environment | Terminal | Run `python3 -m venv .venv`. |
+| Activate the virtual environment | Terminal | Run `source .venv/bin/activate`. |
+| Install the required software | Terminal | Run `python -m pip install --upgrade pip` followed by `python -m pip install -r requirements-dev.txt`. |
+| Check that the environment is active | Terminal | Verify that `(.venv)` appears at the beginning of the terminal prompt. |
+
+:::
+
+## Preview the course website
+You are now ready to preview your course website on your computer.
+
+The SciLifeLab Course Page Template uses **Quarto** to build the website. Before publishing any changes, you can preview the website locally in your web browser to check that everything looks as expected.
+
+The preview is only visible on your own computer. This allows you to safely experiment, edit, and test your course website before your changes become visible to collaborators or visitors.
+
+### Start the preview - terminal 
+
+To start the preview, open a terminal in VS Code. In the terminal, run:
 
 ```bash
 quarto preview
 ```
 
-Quarto will render the website and start a local preview server. The terminal will display an address similar to:
+Quarto will build the website and, after a few seconds, display an address similar to:
 
 ```text
-http://localhost:XXXX/
+http://localhost:4268/
 ```
 
-Open this address in your web browser if the preview does not open automatically.
+In most cases, this page will open automatically in your default web browser. If it does not, copy the address from the terminal and open it manually in your browser.
 
-![The SciLifeLab Course Page Template running as a local preview.](images/getting-started-local-preview.png){width=85% fig-align="center" fig-alt="Course landing page displayed locally in a web browser using Quarto preview."}
+<span style="color: red; font-weight: bold;">fig-alt="Course landing page displayed locally in a web browser using Quarto preview."</span>
 
-You are now viewing a local version of the course website. Changes you make to the landing-page files can be checked here before you publish them to GitHub.
+### Start the preview - preview button 
+
+Alternatively, you can start the preview directly from VS Code by clicking the **Open Preview** button in the top-right corner of the editor.
+
+<span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Open Preview button.</span>
+
+This opens the website inside VS Code. To view the website in your default web browser, click the **Open in Browser** button.
+
+<span style="color: red; font-weight: bold;">Screenshot: VS Code preview with the Open in Browser button highlighted.</span>
+
+### Preview your changes
+
+The website you are viewing is a **local preview**. It is only available on your computer and is not visible to anyone else.
+
+As you **edit** and **save** files in VS Code, Quarto automatically rebuilds the website and refreshes the preview in your browser. This allows you to see your changes automatically without restarting the preview.
+
+### Stop the preview
+
+While the preview is running, the terminal is being used by Quarto. If you need to run other commands without stopping the preview, open a **second terminal** in VS Code.
+
+When you are finished, return to the terminal where `quarto preview` is running and press **Ctrl+C** to stop the preview.
 
 ::: {.callout-tip}
-While `quarto preview` is running, the terminal is being used by the preview server. If you need to run other commands without stopping the preview, open a **second terminal** in VS Code.
+You can start the preview at any time by either:
 
-To stop the preview server, return to the terminal in which it is running and press **Ctrl+C**.
+- running 
+
+```bash
+quarto preview
+```
+  
+- clicking the **Open Preview** button in VS Code.
+  
+Whenever you return to work on your course, remember to first activate the virtual environment by running:
+
+```bash
+source .venv/bin/activate
+```
 :::
 
-## Make your first change 
+::: {.quick-reference}
+<span class="quick-reference-title">Quick reference</span>   
+<span class="quick-reference-subtitle"> Preview the course website </span>
 
-Change the course title.
-Save
-Refresh browser
+| To... | Tool | Action |
+|---|---|---|
+| Start the preview | Terminal | Run `quarto preview`. |
+| Start the preview | Visual Studio Code | Click the **Open Preview** button. |
+| View the website in your browser | Visual Studio Code | Click the **Open in Browser** button from the preview window. |
+| Preview your changes | Visual Studio Code | Save the file. The preview refreshes automatically. |
+| Run additional commands | Visual Studio Code | Open a second terminal. |
+| Stop the preview | Terminal | Press **Ctrl+C**. |
 
-## Commit and push
+:::
 
-Open Source Control
-Stage
-Commit
-Sync / Push
+## Commit and push your changes
 
+So far, any changes you will make exist only on your own computer.
+
+To make changes available to collaborators and publish them on your course website, you need to **commit** and **push** them to GitHub.
+
+In this section, you will make a small change to the landing page and publish it to your repository.
+
+### 1. Make a small change
+
+Open `_sections/hero.qmd`.
+
+Change the course title to something recognisable, for example:
+
+```text
+My first course website
+```
+
+Save the file.
+
+If `quarto preview` is running, the preview should refresh automatically and display the updated title.
+
+<span style="color: red; font-weight: bold;">Screenshot: Updated course title in the preview.</span>
+
+### 2. Open Source Control
+
+In Visual Studio Code, click the **Source Control** icon in the Activity Bar on the left-hand side.
+
+You should now see the files that have changed since you cloned the repository.
+
+<span style="color: red; font-weight: bold;">Screenshot: Source Control showing modified files.</span>
+
+### 3. Stage the changes
+
+Click the **+** button next to **Changes** to stage all modified files.
+
+Staging tells Git which changes you want to include in the next commit.
+
+<span style="color: red; font-weight: bold;">Screenshot: Stage Changes button.</span>
+
+### 4. Commit the changes
+
+At the top of the Source Control panel, enter a short description of your changes.
+
+For example:
+
+```text
+Update course title
+```
+
+Click **Commit**.
+
+<span style="color: red; font-weight: bold;">Screenshot: Commit message box and Commit button.</span>
+
+### 5. Push the changes to GitHub
+
+After committing, click **Sync Changes**.
+
+Visual Studio Code will push your changes to GitHub.
+
+<span style="color: red; font-weight: bold;">Screenshot: Sync Changes button.</span>
+
+Once the push is complete, your changes have been uploaded to your GitHub repository.
 
 ## View the published website 
 

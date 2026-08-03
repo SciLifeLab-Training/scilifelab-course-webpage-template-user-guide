@@ -31,9 +31,9 @@ The guide assumes no prior experience with Git, GitHub, or Quarto. Each chapter 
 ::: {.guide-footer}
 ---
 
-This User Guide is maintained by **SciLifeLab Training Hub**.
+This User Guide is maintained by SciLifeLab Training Hub.
 
 
-If you have questions, encounter problems, or have suggestions for improving the guide or the SciLifeLab Course Webpage Template, please open an issue in the **SciLifeLab Course Webpage Template GitHub repository** or contact SciLifeLab Training Hub at **training@scilifelab.se**.
+If you have questions, encounter problems, or have suggestions for improving the guide or the SciLifeLab Course Webpage Template, please open an issue in the SciLifeLab Course Webpage Template GitHub repository or contact SciLifeLab Training Hub at **training@scilifelab.se**.
 
 :::
