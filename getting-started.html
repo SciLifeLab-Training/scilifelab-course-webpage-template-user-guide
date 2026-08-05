@@ -215,46 +215,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><img src="./images/SciLifeLab_symbol_green-2048x1950.png" class="guide-logo"></p>
 <p><br></p>
-<p>This chapter explains how to create your own copy of the SciLifeLab Course Page Template, set it up on your computer, and publish your first changes. By the end of it, you will have your own course repository, be able to edit and preview the course website locally, and know how to publish updates to GitHub.</p>
-<p>You do not need prior experience with Git, GitHub, Visual Studio Code, or Quarto. Each section provides step-by-step instructions to help you get your course website up and running.</p>
-<p>In the following sections, you will learn how to:</p>
+<p>This chapter explains how to create your own copy of the SciLifeLab Course Page Template, set it up on your computer, and publish your first changes.</p>
+<p>By the end of this chapter, you will have your own course repository, be able to edit and preview your course website locally, and know how to publish updates to GitHub.</p>
+<p>You do not need prior experience with Git, GitHub, Visual Studio Code, or Quarto. Each section provides step-by-step instructions and explains what you should expect to see before moving on to the next step.</p>
+<p>The chapter is divided into two parts:</p>
 <ul>
-<li><a href="#create-accounts">Create the required accounts</a></li>
+<li>One-time setup: the steps you only need to complete once when creating a new course repository.</li>
+<li>Regular workflow: the steps you will repeat whenever you update your course website.</li>
+</ul>
+<p><strong>One-time setup</strong></p>
+<p>The following steps prepare your computer and create your course repository.</p>
+<p><img src="images/getting-started-one-time-setup.png" class="img-fluid" style="width:85.0%" alt="Workflow showing the one-time setup steps for creating and configuring a new course repository."></p>
+<ul>
+<li><a href="#create-accounts-and-install-software">Create required accounts and install required software</a></li>
 <li><a href="#create-a-repository-from-the-template">Create a repository from the template</a></li>
 <li><a href="#clone-the-repository-to-your-computer">Clone the repository to your computer</a></li>
 <li><a href="#open-the-repository-in-visual-studio-code">Open the repository in Visual Studio Code</a></li>
 <li><a href="#set-up-the-local-environment">Set up the local environment</a></li>
+</ul>
+<p><strong>Regular workflow</strong></p>
+<p>Once the one-time setup is complete, the following workflow is all you need to edit and publish changes to your course website.</p>
+<p><img src="images/getting-started-regular-workflow.png" class="img-fluid" style="width:87.0%" alt="Workflow showing the regular editing and publishing workflow for the course website."></p>
+<ul>
 <li><a href="#preview-the-course-website">Preview the course website locally</a></li>
 <li><a href="#commit-and-push-your-changes">Commit and push your changes</a></li>
 <li><a href="#view-the-published-website">View the published website</a></li>
 </ul>
-<p>Each section explains what to do, where to do it, and what you should expect to see before moving on to the next step.</p>
-<p>At the end of each section, you will also find a <strong>Quick reference</strong> box summarising the key steps. These boxes provide a quick reminder of the files, tools, or actions involved and are useful when you return to the guide after completing the initial setup.</p>
-<section id="create-accounts" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="create-accounts"><span class="header-section-number">2.1</span> Create accounts</h2>
-<p>Before creating your course repository, make sure you have access to the software and accounts needed to work with the SciLifeLab Course Page Template.</p>
-<section id="create-a-github-account" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="create-a-github-account"><span class="header-section-number">2.1.1</span> 1. Create a GitHub account</h3>
-<p>GitHub is used to store your course repository, collaborate with others, and publish your course website.</p>
-<p>If you do not already have a GitHub account:</p>
-<ol type="1">
-<li>Visit <a href="https://github.com" class="uri">https://github.com</a>.</li>
-<li>Click <strong>Sign up</strong>.</li>
-<li>Follow the instructions to create an account.</li>
-</ol>
-<p>If your course repository will be hosted within a GitHub organisation (for example <strong><a href="https://github.com/SciLifeLab-Training">SciLifeLab-Training</a></strong>, <strong><a href="https://github.com/ScilifelabDataCentre">SciLifeLabDataCentre</a></strong>, or <strong><a href="https://github.com/NBISweden">NBISweden</a></strong>), ask an organisation administrator to add your GitHub account as a member before continuing.</p>
-<p><span style="color: red; font-weight: bold;">Screenshot: GitHub sign-up page.</span></p>
+<p>At the end of each section, you will find a <strong>Quick reference</strong> box summarising the most important steps. These boxes provide a quick reminder of the tools, files, and actions involved, making it easy to return to the guide after you have completed the initial setup.</p>
+<p><br></p>
+<section id="create-accounts-and-install-software" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="create-accounts-and-install-software"><span class="header-section-number">2.1</span> Create accounts and install software</h2>
+<p>Before creating your course repository, make sure you have the accounts and software needed to work with the SciLifeLab Course Page Template.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Software</th>
+<th>Why you need it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Git</td>
+<td>Download the repository to your computer and upload your changes to GitHub.</td>
+</tr>
+<tr class="even">
+<td>Quarto</td>
+<td>Build and preview the course website.</td>
+</tr>
+<tr class="odd">
+<td>Python 3</td>
+<td>Create the virtual environment and run the template scripts.</td>
+</tr>
+<tr class="even">
+<td>Visual Studio Code</td>
+<td>Edit the course files and manage your repository.</td>
+</tr>
+<tr class="odd">
+<td>GitHub account</td>
+<td>Store your course repository and publish your course website.</td>
+</tr>
+</tbody>
+</table>
+<section id="install-git" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="install-git"><span class="header-section-number">2.1.1</span> Install Git</h3>
+<p>Git is used to download your course repository to your computer and upload your changes back to GitHub.</p>
+<p>To install Git, follow the instructions provided in the official Git installation guide:</p>
+<p><a href="https://github.com/git-guides/install-git" class="uri">https://github.com/git-guides/install-git</a></p>
 </section>
-<section id="install-visual-studio-code" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="install-visual-studio-code"><span class="header-section-number">2.1.2</span> 2. Install Visual Studio Code</h3>
+<section id="install-quarto" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="install-quarto"><span class="header-section-number">2.1.2</span> Install Quarto</h3>
+<p>Quarto builds and previews the course website.</p>
+<p>Download and install the latest version of Quarto from:</p>
+<p><a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></p>
+</section>
+<section id="install-python" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="install-python"><span class="header-section-number">2.1.3</span> Install Python</h3>
+<p>Python is used to create the virtual environment and run the template scripts.</p>
+<p>Download and install the latest stable version of Python from:</p>
+<p><a href="https://www.python.org/downloads/" class="uri">https://www.python.org/downloads/</a></p>
+</section>
+<section id="install-visual-studio-code" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="install-visual-studio-code"><span class="header-section-number">2.1.4</span> Install Visual Studio Code</h3>
 <p>Visual Studio Code (VS Code) is the editor used throughout this guide to edit and preview the course website.</p>
 <p>If you do not already have VS Code installed:</p>
 <ol type="1">
 <li>Visit <a href="https://code.visualstudio.com/" class="uri">https://code.visualstudio.com/</a>.</li>
 <li>Download the version for your operating system.</li>
 <li>Follow the installation instructions.</li>
+<li>Open VS Code once to check that it starts correctly.</li>
 </ol>
-<p>After installation, open VS Code once to check that it starts correctly.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: Visual Studio Code download page.</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -269,9 +322,21 @@ Tip
 <p>Throughout this guide, all file editing and Git operations are demonstrated using VS Code. You may use a different editor if you prefer, but the instructions and screenshots assume you are using VS Code.</p>
 </div>
 </div>
+</section>
+<section id="create-a-github-account" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="create-a-github-account"><span class="header-section-number">2.1.5</span> Create a GitHub account</h3>
+<p>GitHub is used to store your course repository, collaborate with others, and publish your course website.</p>
+<p>If you do not already have a GitHub account:</p>
+<ol type="1">
+<li>Visit <a href="https://github.com" class="uri">https://github.com</a>.</li>
+<li>Click <strong>Sign up</strong>.</li>
+<li>Follow the instructions to create an account.</li>
+</ol>
+<p>If your course repository will be hosted within a GitHub organisation (for example <a href="https://github.com/SciLifeLab-Training">SciLifeLab-Training</a>, <a href="https://github.com/ScilifelabDataCentre">SciLifeLabDataCentre</a>, or <a href="https://github.com/NBISweden">NBISweden</a>), ask an organisation administrator to add your GitHub account as a member before continuing.</p>
+<p><span style="color: red; font-weight: bold;">Screenshot: GitHub sign-up page.</span></p>
 <div class="quick-reference">
 <p><span class="quick-reference-title">Quick reference</span><br>
-<span class="quick-reference-subtitle"> Create accounts </span></p>
+<span class="quick-reference-subtitle"> Create accounts and install the required software </span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -281,10 +346,22 @@ Tip
 </thead>
 <tbody>
 <tr class="odd">
+<td>Install Git</td>
+<td><a href="https://github.com/git-guides/install-git" class="uri">https://github.com/git-guides/install-git</a></td>
+</tr>
+<tr class="even">
+<td>Install Quarto</td>
+<td><a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></td>
+</tr>
+<tr class="odd">
+<td>Install Python</td>
+<td><a href="https://www.python.org/downloads/" class="uri">https://www.python.org/downloads/</a></td>
+</tr>
+<tr class="even">
 <td>Create a GitHub account</td>
 <td><a href="https://github.com" class="uri">https://github.com</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Download Visual Studio Code</td>
 <td><a href="https://code.visualstudio.com/" class="uri">https://code.visualstudio.com/</a></td>
 </tr>
@@ -351,8 +428,26 @@ Tip
 <p>Check the repository name at the top of the page to make sure you are now working in <strong>your new course repository</strong>, rather than the original SciLifeLab Course Page Template repository.</p>
 <p><span style="color: red; font-weight: bold;"> image: fig-alt=“GitHub page showing a newly created repository based on the course page template.”</span></p>
 </section>
-<section id="add-collaborators" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="add-collaborators"><span class="header-section-number">2.2.4</span> Add collaborators</h3>
+<section id="add-the-website-link-to-your-repository" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="add-the-website-link-to-your-repository"><span class="header-section-number">2.2.4</span> Add the website link to your repository</h3>
+<p>Once your course website has been published, you can add its URL to your GitHub repository. This makes it easy to open the published website directly from the repository home page.</p>
+<ol type="1">
+<li><p>In your GitHub repository, click the <strong>Code</strong> tab.</p></li>
+<li><p>On the right-hand side of the page, locate the <strong>About</strong> section and click the <strong>Settings</strong> <span aria-hidden="true">⚙️</span> icon.</p></li>
+</ol>
+<p><span style="color: red; font-weight: bold;">Screenshot: Repository home page showing the About settings button.</span></p>
+<ol start="3" type="1">
+<li><p>In the <strong>Edit repository details</strong> dialog:</p>
+<ul>
+<li>Select <strong>Use your GitHub Pages website to automatically fill the Website URL</strong>.</li>
+<li>Click <strong>Save changes</strong>.</li>
+</ul></li>
+</ol>
+<p><span style="color: red; font-weight: bold;">Screenshot: Edit repository details dialog with the GitHub Pages option selected.</span></p>
+<p>The URL of your published course website will now appear in the <strong>About</strong> section of your repository. You can use this link to quickly open the latest version of your course website at any time.</p>
+</section>
+<section id="add-collaborators" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="add-collaborators"><span class="header-section-number">2.2.5</span> Add collaborators</h3>
 <p>If other people will help develop or maintain the course, you can give them access to the repository. If you do not yet know who will contribute, you can return to this step later.</p>
 <ol type="1">
 <li><p>In your course repository, click <strong>Settings</strong>.</p></li>
@@ -427,6 +522,11 @@ Note
 <td>Add collaborators</td>
 <td><strong>Settings</strong> → <strong>Collaborators and teams</strong></td>
 <td>Add people or teams and assign the appropriate role.</td>
+</tr>
+<tr class="odd">
+<td>Add the course website link</td>
+<td><strong>Code</strong> → <strong>About</strong> → <strong>Settings</strong></td>
+<td>Select <strong>Use your GitHub Pages website to automatically fill the Website URL</strong> and click <strong>Save changes</strong>.</td>
 </tr>
 </tbody>
 </table>
@@ -529,13 +629,17 @@ Tip
 <li>Navigate to the repository you just cloned, select the repository folder, and click <strong>Open</strong>.</li>
 </ol>
 <p><span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Open Folder dialog with the cloned repository selected.</span></p>
-<p>The files and folders in your repository should now appear in the <strong>Explorer</strong> panel on the left-hand side of the window.</p>
+<p>4.The files and folders in your repository should now appear in the <strong>Explorer</strong> panel on the left-hand side of the window.</p>
 <p>Throughout this guide, you will edit files by selecting them from the Explorer.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Explorer panel with the repository opened.</span></p>
+<ol start="5" type="1">
+<li>When you open the repository for the first time, VS Code may display a notification recommending extensions for this workspace (if these extensions are not yet installed). If so, click <strong>Install</strong> to install the recommended extensions, these provide support for working with the template.</li>
+</ol>
+<p><span style="color: red; font-weight: bold;">Screenshot: VS Code showing the “Install Recommended Extensions” notification.</span></p>
 <p>You are now ready to set up the local environment needed to edit and preview your course website.</p>
 <div class="quick-reference">
 <p><span class="quick-reference-title">Quick reference</span><br>
-<span class="quick-reference-subtitle"> Open the repository in VS Code </span></p>
+<span class="quick-reference-subtitle"> Open the repository in Visual Studio Code </span></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -556,6 +660,11 @@ Tip
 <td>Select <strong>File → Open Folder…</strong> and choose your repository folder.</td>
 </tr>
 <tr class="even">
+<td>Install the recommended extensions</td>
+<td>Visual Studio Code</td>
+<td>Click <strong>Install</strong> if prompted.</td>
+</tr>
+<tr class="odd">
 <td>Browse the repository files</td>
 <td>Explorer panel</td>
 <td>Use the Explorer to open and edit files throughout this guide.</td>
@@ -573,25 +682,52 @@ Tip
 <p>A terminal should open at the bottom of the VS Code window.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: VS Code showing Terminal → New Terminal.</span></p>
 </section>
-<section id="create-a-virtual-environment" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="create-a-virtual-environment"><span class="header-section-number">2.5.2</span> Create a virtual environment</h3>
-<p>Copy and paste the following command into the terminal, then press <strong>Enter</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="check-that-git-quarto-and-python-are-installed" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="check-that-git-quarto-and-python-are-installed"><span class="header-section-number">2.5.2</span> Check that Git, Quarto, and Python are installed</h3>
+<p>Before continuing, check that Git, Quarto, and Python have been installed correctly.</p>
+<p>Copy and paste the following three commands into the terminaL.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If each command prints a version number, the software has been installed correctly and you are ready to continue.</p>
+<p>For example:</p>
+<pre class="text"><code>git version 2.50.1
+Quarto 1.8.24
+Python 3.13.5</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If one of the commands reports <strong>command not found</strong>, the corresponding software is not installed or cannot be found by your computer.</p>
+<p>Return to <strong><a href="#create-accounts-and-install-software">Create accounts and install the required software</a></strong>, install the missing software, and then repeat the commands above before continuing.</p>
+</div>
+</div>
 </section>
-<section id="activate-the-virtual-environment" class="level3" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="activate-the-virtual-environment"><span class="header-section-number">2.5.3</span> Activate the virtual environment</h3>
+<section id="create-a-virtual-environment" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="create-a-virtual-environment"><span class="header-section-number">2.5.3</span> Create a virtual environment</h3>
+<p>Copy and paste the following command into the terminal, then press <strong>Enter</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="activate-the-virtual-environment" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="activate-the-virtual-environment"><span class="header-section-number">2.5.4</span> Activate the virtual environment</h3>
 <p>Next, copy and paste the following command into the terminal, and press <strong>Enter</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If the command was successful, you should see <code>(.venv)</code> at the beginning of the terminal prompt.</p>
 <p>For example:</p>
 <pre class="text"><code>(.venv) username@computer my-course %</code></pre>
 <p><span style="color: red; font-weight: bold;">Screenshot: Terminal showing (.venv) at the beginning of the prompt.</span></p>
 </section>
-<section id="install-the-required-software" class="level3" data-number="2.5.4">
-<h3 data-number="2.5.4" class="anchored" data-anchor-id="install-the-required-software"><span class="header-section-number">2.5.4</span> 3. Install the required software</h3>
+<section id="install-the-required-software" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="install-the-required-software"><span class="header-section-number">2.5.5</span> Install the required software</h3>
 <p>Finally, copy and paste the following commands into the terminal, and press <strong>Enter</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements-dev.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements-dev.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This may take a minute or two. Once the installation is complete, your local environment is ready and you can preview your course website.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -605,7 +741,7 @@ Tip
 <div class="callout-body-container callout-body">
 <p>You only need to create the virtual environment and install the required software once for each course repository.</p>
 <p>The next time you work on the repository, simply open a terminal in VS Code and reactivate the virtual environment by running:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should again see <code>(.venv)</code> at the beginning of the terminal prompt.</p>
 </div>
 </div>
@@ -664,7 +800,7 @@ Tip
 <section id="start-the-preview---terminal" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="start-the-preview---terminal"><span class="header-section-number">2.6.1</span> Start the preview - terminal</h3>
 <p>To start the preview, open a terminal in VS Code. In the terminal, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Quarto will build the website and, after a few seconds, display an address similar to:</p>
 <pre class="text"><code>http://localhost:4268/</code></pre>
 <p>In most cases, this page will open automatically in your default web browser. If it does not, copy the address from the terminal and open it manually in your browser.</p>
@@ -700,12 +836,12 @@ Tip
 <ul>
 <li>running</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>clicking the <strong>Open Preview</strong> button in VS Code.</li>
 </ul>
 <p>Whenever you return to work on your course, remember to first activate the virtual environment by running:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="quick-reference">
@@ -811,19 +947,63 @@ This is my first course website
 </section>
 <section id="push-the-changes-to-github" class="level3" data-number="2.7.5">
 <h3 data-number="2.7.5" class="anchored" data-anchor-id="push-the-changes-to-github"><span class="header-section-number">2.7.5</span> Push the changes to GitHub</h3>
-<p>After committing, click <strong>Sync Changes</strong>.</p>
-<p>Visual Studio Code will push your changes to GitHub.</p>
+<p>After committing, click the blue <strong>Sync Changes</strong> button.</p>
+<p>Visual Studio Code will upload (or <strong>push</strong>) your committed changes to GitHub.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: Sync Changes button.</span></p>
-<p>Once the push is complete, your changes have been uploaded to your GitHub repository.</p>
+<p>Once the upload is complete:</p>
+<ul>
+<li>your collaborators can see the changes in the GitHub repository;</li>
+<li>GitHub automatically republishes your course website with the new changes.</li>
+</ul>
 </section>
 </section>
 <section id="view-the-published-website" class="level2" data-number="2.8">
 <h2 data-number="2.8" class="anchored" data-anchor-id="view-the-published-website"><span class="header-section-number">2.8</span> View the published website</h2>
-<p>When you push to main, GitHub automatically rebuilds and republishes the landing page. Then show Actions tab green checkmark Pages</p>
+<p>After you push your changes to GitHub, the course website is updated automatically. You do not need to publish the website yourself.</p>
+<p>It usually takes less than a minute for GitHub to rebuild and republish the landing page.</p>
+<section id="check-that-the-deployment-was-successful" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="check-that-the-deployment-was-successful"><span class="header-section-number">2.8.1</span> Check that the deployment was successful</h3>
+<ol type="1">
+<li><p>Open your course repository on GitHub.</p></li>
+<li><p>Click the <strong>Actions</strong> tab.</p></li>
+</ol>
+<p>You should see a workflow called <strong>pages build and deployment</strong>. While the website is being rebuilt, the workflow will show a yellow indicator.</p>
+<p>Once the deployment has finished successfully, a <strong>green checkmark</strong> will appear next to the workflow.</p>
+<p><span style="color: red; font-weight: bold;">Screenshot: GitHub Actions page showing a successful deploy-landing workflow.</span></p>
+</section>
+<section id="view-the-published-website-1" class="level3" data-number="2.8.2">
+<h3 data-number="2.8.2" class="anchored" data-anchor-id="view-the-published-website-1"><span class="header-section-number">2.8.2</span> View the published website</h3>
+<p>Once the <strong>deploy-landing</strong> workflow has finished successfully, you can view the updated course website.</p>
+<ol type="1">
+<li><p>In your GitHub repository, click the <strong>Code</strong> tab.</p></li>
+<li><p>In the <strong>About</strong> section on the right-hand side, click the website URL you added earlier.</p></li>
+</ol>
+<p><span style="color: red; font-weight: bold;">Screenshot: Repository home page showing the website URL in the About section.</span></p>
+<p>The published course website will open in your web browser.</p>
+<p>Refresh the page if necessary. The change you made to the course title should now be visible.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you do not see your changes immediately, wait a minute and refresh the page. GitHub Pages can sometimes take a short time to update after the deployment has finished.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="next-steps" class="level2" data-number="2.9">
 <h2 data-number="2.9" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">2.9</span> Next steps</h2>
-<p>Congratulations! You now have your own copy of the SciLifeLab Course Page Template running locally and published through GitHub Pages. Continue with: Landing page to customise the landing page. Course instances to create and manage course instances. FAIRification to prepare your training materials for publication and reuse.</p>
+<p>Congratulations! You now have your own copy of the SciLifeLab Course Page Template running locally and published through GitHub Pages. Continue with:</p>
+<ul>
+<li><a href="./landing-page.html">Landing page</a> to customise the landing page.</li>
+<li><a href="./course-instances.html">Course instances</a> to create, manage and customize course instances.</li>
+<li><a href="./fairification.html">FAIRification</a> to prepare your training materials for publication and reuse.</li>
+</ul>
 
 
 </section>
