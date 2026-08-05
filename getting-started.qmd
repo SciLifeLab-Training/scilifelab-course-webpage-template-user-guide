@@ -60,7 +60,7 @@ After installation, open VS Code once to check that it starts correctly.
 <span style="color: red; font-weight: bold;">Screenshot: Visual Studio Code download page.</span>
 
 ::: {.callout-tip}
-Throughout this guide, all file editing and Git operations are demonstrated using Visual Studio Code. You may use a different editor if you prefer, but the instructions and screenshots assume you are using VS Code.
+Throughout this guide, all file editing and Git operations are demonstrated using VS Code. You may use a different editor if you prefer, but the instructions and screenshots assume you are using VS Code.
 :::
 
 ::: {.quick-reference}
@@ -343,7 +343,7 @@ You should again see `(.venv)` at the beginning of the terminal prompt.
 ## Preview the course website
 You are now ready to preview your course website on your computer.
 
-The SciLifeLab Course Page Template uses **Quarto** to build the website. Before publishing any changes, you can preview the website locally in your web browser to check that everything looks as expected.
+The SciLifeLab Course Page Template uses **[Quarto](https://quarto.org/docs/websites/)** to build the website. Before publishing any changes, you can preview the website locally in your web browser to check that everything looks as expected.
 
 The preview is only visible on your own computer. This allows you to safely experiment, edit, and test your course website before your changes become visible to collaborators or visitors.
 
@@ -422,47 +422,62 @@ source .venv/bin/activate
 
 ## Commit and push your changes
 
-So far, any changes you will make exist only on your own computer.
+So far, any changes you make exist only on your own computer.
 
-To make changes available to collaborators and publish them on your course website, you need to **commit** and **push** them to GitHub.
+To make these changes available to collaborators and publish them on your course website, you need to **commit** and **push** them to GitHub.
 
 In this section, you will make a small change to the landing page and publish it to your repository.
 
-### 1. Make a small change
+### Make a small change
 
-Open `_sections/hero.qmd`.
+1. Open `_sections/hero.qmd`.
 
-Change the course title to something recognisable, for example:
+2. Locate the course title:
 
 ```text
-My first course website
+:::{.hero__copy}
+:::{.hero__title}
+Course title
+:::
 ```
 
-Save the file.
+3. Replace **Course title** with something recognisable, for example:
+
+```text
+:::{.hero__copy}
+:::{.hero__title}
+This is my first course website
+:::
+```
+
+4. Save the file by pressing **Command+S** (macOS) or **Ctrl+S** (Windows/Linux).
 
 If `quarto preview` is running, the preview should refresh automatically and display the updated title.
 
 <span style="color: red; font-weight: bold;">Screenshot: Updated course title in the preview.</span>
 
-### 2. Open Source Control
+### Open Source Control
 
 In Visual Studio Code, click the **Source Control** icon in the Activity Bar on the left-hand side.
 
-You should now see the files that have changed since you cloned the repository.
+You should now see the files that have changed since you cloned the repository. In this example, `_sections/hero.qmd` should be listed under **Changes**.
 
-<span style="color: red; font-weight: bold;">Screenshot: Source Control showing modified files.</span>
+<span style="color: red; font-weight: bold;">Screenshot: Source Control showing the modified file.</span>
 
-### 3. Stage the changes
+### Stage the changes
 
-Click the **+** button next to **Changes** to stage all modified files.
+Click the **+** button next to the file under **Changes**. When you hover over the **+** button, the tooltip will say **Stage Changes**.
 
-Staging tells Git which changes you want to include in the next commit.
+Staging tells Git which changes you want to include in your next commit. Only staged changes will be committed and later published to your course website.
+
+If you have made changes that you do not want to keep, you can either leave them unstaged or discard them using the **Discard Changes** button.
 
 <span style="color: red; font-weight: bold;">Screenshot: Stage Changes button.</span>
 
-### 4. Commit the changes
 
-At the top of the Source Control panel, enter a short description of your changes.
+### Commit the changes
+
+At the top of the **Source Control** panel, enter a short description of the changes you made in the **Message** box.
 
 For example:
 
@@ -470,11 +485,11 @@ For example:
 Update course title
 ```
 
-Click **Commit**.
+Then click the blue **Commit** button.
 
 <span style="color: red; font-weight: bold;">Screenshot: Commit message box and Commit button.</span>
 
-### 5. Push the changes to GitHub
+### Push the changes to GitHub
 
 After committing, click **Sync Changes**.
 
