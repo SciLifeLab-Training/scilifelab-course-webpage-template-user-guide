@@ -266,7 +266,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Throughout this guide, all file editing and Git operations are demonstrated using Visual Studio Code. You may use a different editor if you prefer, but the instructions and screenshots assume you are using VS Code.</p>
+<p>Throughout this guide, all file editing and Git operations are demonstrated using VS Code. You may use a different editor if you prefer, but the instructions and screenshots assume you are using VS Code.</p>
 </div>
 </div>
 <div class="quick-reference">
@@ -659,7 +659,7 @@ Tip
 <section id="preview-the-course-website" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="preview-the-course-website"><span class="header-section-number">2.6</span> Preview the course website</h2>
 <p>You are now ready to preview your course website on your computer.</p>
-<p>The SciLifeLab Course Page Template uses <strong>Quarto</strong> to build the website. Before publishing any changes, you can preview the website locally in your web browser to check that everything looks as expected.</p>
+<p>The SciLifeLab Course Page Template uses <strong><a href="https://quarto.org/docs/websites/">Quarto</a></strong> to build the website. Before publishing any changes, you can preview the website locally in your web browser to check that everything looks as expected.</p>
 <p>The preview is only visible on your own computer. This allows you to safely experiment, edit, and test your course website before your changes become visible to collaborators or visitors.</p>
 <section id="start-the-preview---terminal" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="start-the-preview---terminal"><span class="header-section-number">2.6.1</span> Start the preview - terminal</h3>
@@ -762,40 +762,55 @@ Tip
 </section>
 <section id="commit-and-push-your-changes" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="commit-and-push-your-changes"><span class="header-section-number">2.7</span> Commit and push your changes</h2>
-<p>So far, any changes you will make exist only on your own computer.</p>
-<p>To make changes available to collaborators and publish them on your course website, you need to <strong>commit</strong> and <strong>push</strong> them to GitHub.</p>
+<p>So far, any changes you make exist only on your own computer.</p>
+<p>To make these changes available to collaborators and publish them on your course website, you need to <strong>commit</strong> and <strong>push</strong> them to GitHub.</p>
 <p>In this section, you will make a small change to the landing page and publish it to your repository.</p>
 <section id="make-a-small-change" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="make-a-small-change"><span class="header-section-number">2.7.1</span> 1. Make a small change</h3>
-<p>Open <code>_sections/hero.qmd</code>.</p>
-<p>Change the course title to something recognisable, for example:</p>
-<pre class="text"><code>My first course website</code></pre>
-<p>Save the file.</p>
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="make-a-small-change"><span class="header-section-number">2.7.1</span> Make a small change</h3>
+<ol type="1">
+<li><p>Open <code>_sections/hero.qmd</code>.</p></li>
+<li><p>Locate the course title:</p></li>
+</ol>
+<pre class="text"><code>:::{.hero__copy}
+:::{.hero__title}
+Course title
+:::</code></pre>
+<ol start="3" type="1">
+<li>Replace <strong>Course title</strong> with something recognisable, for example:</li>
+</ol>
+<pre class="text"><code>:::{.hero__copy}
+:::{.hero__title}
+This is my first course website
+:::</code></pre>
+<ol start="4" type="1">
+<li>Save the file by pressing <strong>Command+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows/Linux).</li>
+</ol>
 <p>If <code>quarto preview</code> is running, the preview should refresh automatically and display the updated title.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: Updated course title in the preview.</span></p>
 </section>
 <section id="open-source-control" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="open-source-control"><span class="header-section-number">2.7.2</span> 2. Open Source Control</h3>
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="open-source-control"><span class="header-section-number">2.7.2</span> Open Source Control</h3>
 <p>In Visual Studio Code, click the <strong>Source Control</strong> icon in the Activity Bar on the left-hand side.</p>
-<p>You should now see the files that have changed since you cloned the repository.</p>
-<p><span style="color: red; font-weight: bold;">Screenshot: Source Control showing modified files.</span></p>
+<p>You should now see the files that have changed since you cloned the repository. In this example, <code>_sections/hero.qmd</code> should be listed under <strong>Changes</strong>.</p>
+<p><span style="color: red; font-weight: bold;">Screenshot: Source Control showing the modified file.</span></p>
 </section>
 <section id="stage-the-changes" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="stage-the-changes"><span class="header-section-number">2.7.3</span> 3. Stage the changes</h3>
-<p>Click the <strong>+</strong> button next to <strong>Changes</strong> to stage all modified files.</p>
-<p>Staging tells Git which changes you want to include in the next commit.</p>
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="stage-the-changes"><span class="header-section-number">2.7.3</span> Stage the changes</h3>
+<p>Click the <strong>+</strong> button next to the file under <strong>Changes</strong>. When you hover over the <strong>+</strong> button, the tooltip will say <strong>Stage Changes</strong>.</p>
+<p>Staging tells Git which changes you want to include in your next commit. Only staged changes will be committed and later published to your course website.</p>
+<p>If you have made changes that you do not want to keep, you can either leave them unstaged or discard them using the <strong>Discard Changes</strong> button.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: Stage Changes button.</span></p>
 </section>
 <section id="commit-the-changes" class="level3" data-number="2.7.4">
-<h3 data-number="2.7.4" class="anchored" data-anchor-id="commit-the-changes"><span class="header-section-number">2.7.4</span> 4. Commit the changes</h3>
-<p>At the top of the Source Control panel, enter a short description of your changes.</p>
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="commit-the-changes"><span class="header-section-number">2.7.4</span> Commit the changes</h3>
+<p>At the top of the <strong>Source Control</strong> panel, enter a short description of the changes you made in the <strong>Message</strong> box.</p>
 <p>For example:</p>
 <pre class="text"><code>Update course title</code></pre>
-<p>Click <strong>Commit</strong>.</p>
+<p>Then click the blue <strong>Commit</strong> button.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: Commit message box and Commit button.</span></p>
 </section>
 <section id="push-the-changes-to-github" class="level3" data-number="2.7.5">
-<h3 data-number="2.7.5" class="anchored" data-anchor-id="push-the-changes-to-github"><span class="header-section-number">2.7.5</span> 5. Push the changes to GitHub</h3>
+<h3 data-number="2.7.5" class="anchored" data-anchor-id="push-the-changes-to-github"><span class="header-section-number">2.7.5</span> Push the changes to GitHub</h3>
 <p>After committing, click <strong>Sync Changes</strong>.</p>
 <p>Visual Studio Code will push your changes to GitHub.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: Sync Changes button.</span></p>
