@@ -2,7 +2,10 @@
 title: "Repository structure"
 ---
 
+<img src="/images/SciLifeLab_symbol_green-2048x1950.png"
+     class="guide-logo">
 
+<br>
 
 ## Branches
 By default, GitHub displays the `main` branch. This branch contains the course landing page and general information about your course.

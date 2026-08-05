@@ -10,7 +10,7 @@ title: "Introduction"
 Welcome to the **SciLifeLab Course Webpage Template User Guide**!
 
 
-The **SciLifeLab Course Webpage Template** is designed to help course organisers create consistent, reusable, and FAIR training materials with minimal technical knowledge.
+The **[SciLifeLab Course Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template-staging/)** is designed to help course organisers create consistent, reusable, and FAIR training materials with minimal technical knowledge.
 
 This guide explains how to set up, customise, publish, and maintain a course website using the template. Whether you are creating a new course or updating an existing one, the guide provides step-by-step instructions for each stage of the process.
 
@@ -21,7 +21,6 @@ By the end of this guide, you will know how to:
 - Customise the course landing page.
 - Create and manage course instances.
 - Customise course instance pages.
-- Publish updates to your course website using GitHub.
 - Prepare your training materials for publication, citation, and reuse following FAIR principles.
 
 The guide assumes no prior experience with Git, GitHub, or Quarto. Each chapter explains where to find the relevant files, what to edit, and how to preview your changes before publishing them.
