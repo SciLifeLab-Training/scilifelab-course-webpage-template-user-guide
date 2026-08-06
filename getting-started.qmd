@@ -10,7 +10,7 @@ This chapter explains how to create your own copy of the SciLifeLab Course Page 
 
 By the end of this chapter, you will have your own course repository, be able to edit and preview your course website locally, and know how to publish updates to GitHub.
 
-You do not need prior experience with Git, GitHub, Visual Studio Code, or Quarto. Each section provides step-by-step instructions and explains what you should expect to see before moving on to the next step.
+You do not need prior experience with Git, Python, Visual Studio Code or Quarto. Each section provides step-by-step instructions and explains what you should expect to see before moving on to the next step.
 
 The chapter is divided into two parts:
 
@@ -181,15 +181,13 @@ Check the repository name at the top of the page to make sure you are now workin
 
 Once your course website has been published, you can add its URL to your GitHub repository. This makes it easy to open the published website directly from the repository home page.
 
-1. In your GitHub repository, click the **Code** tab.
-
-2. On the right-hand side of the page, locate the **About** section and click the **Settings** <span aria-hidden="true">⚙️</span> icon.
+1. On the right-hand side of the repository home page, locate the **About** section and click the **Settings** <span aria-hidden="true">⚙️</span> icon.
 
 <span style="color: red; font-weight: bold;">Screenshot: Repository home page showing the About settings button.</span>
 
-3. In the **Edit repository details** dialog:
+2. In the **Edit repository details** dialog:
 
-   - Select **Use your GitHub Pages website to automatically fill the Website URL**.
+   - Select **Use your GitHub Pages website**.
    - Click **Save changes**.
 
 <span style="color: red; font-weight: bold;">Screenshot: Edit repository details dialog with the GitHub Pages option selected.</span>
@@ -291,7 +289,7 @@ git clone https://github.com/ORGANISATION/my-course.git
 
 Git will download the repository and create a new folder containing all of the files needed for your course website.
 
-You now have a local copy of your course repository. In the next section, you will open it in Visual Studio Code and prepare it for editing.
+You now have a local copy of your course repository. In the next section, you will open it in VS Code and prepare it for editing.
 
 ::: {.quick-reference}
 
@@ -321,7 +319,7 @@ To open your new repository in VS Code:
 
 <span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Open Folder dialog with the cloned repository selected.</span>
 
-4.The files and folders in your repository should now appear in the **Explorer** panel on the left-hand side of the window.
+4. The files and folders in your repository should now appear in the **Explorer** panel on the left-hand side of the window.
 
 Throughout this guide, you will edit files by selecting them from the Explorer.
 
@@ -530,15 +528,15 @@ source .venv/bin/activate
 
 ## Commit and push your changes
 
-So far, any changes you make exist only on your own computer.
+So far, any changes you will make exist only on your own computer.
 
-To make these changes available to collaborators and publish them on your course website, you need to **commit** and **push** them to GitHub.
+To make changes available to collaborators and publish them on your course website, you need to **commit** and **push** them to GitHub.
 
 In this section, you will make a small change to the landing page and publish it to your repository.
 
 ### Make a small change
 
-1. Open `_sections/hero.qmd`.
+1. In the explorer panel in VS Code, open the file `_sections/hero.qmd`.
 
 2. Locate the course title:
 
@@ -565,8 +563,9 @@ If `quarto preview` is running, the preview should refresh automatically and dis
 <span style="color: red; font-weight: bold;">Screenshot: Updated course title in the preview.</span>
 
 ### Open Source Control
+The next steps will upload the small change you made  to your GitHub repository so that it becomes available to your collaborators and can be published on your course website.
 
-In Visual Studio Code, click the **Source Control** icon in the Activity Bar on the left-hand side.
+In VS Code, this is done from the **Source Control** panel. To open it, click the **Source Control** icon in the Activity Bar on the left-hand side of the window.
 
 You should now see the files that have changed since you cloned the repository. In this example, `_sections/hero.qmd` should be listed under **Changes**.
 
@@ -654,3 +653,16 @@ Continue with:
 - [Landing page](landing-page.qmd) to customise the landing page.
 - [Course instances](course-instances.qmd) to create, manage and customize course instances.
 - [FAIRification](fairification.qmd) to prepare your training materials for publication and reuse.
+
+
+<br>
+
+::: {.guide-footer}
+---
+
+This User Guide is maintained by SciLifeLab Training Hub.
+
+
+If you have questions, encounter problems, or have suggestions for improving the guide or the SciLifeLab Course Webpage Template, please open an issue in the SciLifeLab Course Webpage Template GitHub repository or contact SciLifeLab Training Hub at **training@scilifelab.se**.
+
+:::

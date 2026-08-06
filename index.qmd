@@ -23,7 +23,7 @@ By the end of this guide, you will know how to:
 - Customise course instance pages.
 - Prepare your training materials for publication, citation, and reuse following FAIR principles.
 
-The guide assumes no prior experience with Git, GitHub, or Quarto. Each chapter explains where to find the relevant files, what to edit, and how to preview your changes before publishing them.
+The guide assumes no prior experience with Git, Python or Quarto. Each chapter explains where to find the relevant files, what to edit, and how to preview your changes before publishing them.
 
 <br>
 

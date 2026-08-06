@@ -7,10 +7,77 @@ title: "Repository structure"
 
 <br>
 
-## Branches
+
+## Repository
+
 By default, GitHub displays the `main` branch. This branch contains the course landing page and general information about your course.
 
 The template also contains additional branches used for course instances and publication. You will work with these later in the guide.
+
+
+main
+│
+├── Landing page
+│
+├── Course information
+│
+└── Links to course instances
+
+2505
+│
+└── May 2025 course website
+
+2601
+│
+└── January 2026 course website
+
+2605
+│
+└── May 2026 course website
+
+
+| I want to...                | Branch                       |
+| --------------------------- | ---------------------------- |
+| Change the landing page     | `main`                       |
+| Add a new course instance   | create a new instance branch |
+| Edit the May 2026 materials | `2605`                       |
+| Fix a typo in January 2026  | `2601`                       |
+
+
+
+## Landing page
+
+| Folder               | Purpose                                |            Edit?           |
+| -------------------- | -------------------------------------- | :------------------------: |
+| `_sections/`         | Landing page content                   |        ✅ Frequently        |
+| `data/`              | Landing page configuration             |        ✅ Frequently        |
+| `img/`               | Images and logos                       |        ✅ Frequently        |
+| `styles.css`         | Landing page styling                   |       🟡 Occasionally      |
+| `scripts/`           | Generates dynamic landing page content |        ❌ Usually no        |
+| `tests/`             | Automated tests                        |        ❌ Usually no        |
+| `.github/workflows/` | GitHub Actions                         |        ❌ Usually no        |
+| `docs/developer/`    | Developer documentation                | ❌ Only template developers |
+| `.quarto/`           | Quarto cache                           |  ❌ Automatically generated |
+| `_site/`             | Generated website                      |  ❌ Automatically generated |
+| `.venv/`             | Virtual environment                    |   ❌ Automatically created  |
+
+
+
+
+/
+├── _sections/
+├── data/
+├── img/
+├── scripts/
+├── tests/
+├── docs/
+├── styles.css
+├── index.qmd
+└── ...
+
+
+
+## Branches
 
 ::: {.callout-note}
 The course website uses different branches for different purposes:
@@ -21,3 +88,5 @@ The course website uses different branches for different purposes:
 
 You should not edit the `gh-pages` branch directly.
 :::
+
+
