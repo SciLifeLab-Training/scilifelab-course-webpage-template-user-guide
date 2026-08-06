@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-40766f26011dd0955435ccc10f1198e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a8d14d036aacfc61ba52a6ee93c515d2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -180,10 +180,118 @@ ul.task-list li input[type="checkbox"] {
 
 <p><img src="./images/SciLifeLab_symbol_green-2048x1950.png" class="guide-logo"></p>
 <p><br></p>
-<section id="branches" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="branches"><span class="header-section-number">3.1</span> Branches</h2>
+<section id="repository" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="repository"><span class="header-section-number">3.1</span> Repository</h2>
 <p>By default, GitHub displays the <code>main</code> branch. This branch contains the course landing page and general information about your course.</p>
 <p>The template also contains additional branches used for course instances and publication. You will work with these later in the guide.</p>
+<p>main │ ├── Landing page │ ├── Course information │ └── Links to course instances</p>
+<p>2505 │ └── May 2025 course website</p>
+<p>2601 │ └── January 2026 course website</p>
+<p>2605 │ └── May 2026 course website</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>I want to…</th>
+<th>Branch</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Change the landing page</td>
+<td><code>main</code></td>
+</tr>
+<tr class="even">
+<td>Add a new course instance</td>
+<td>create a new instance branch</td>
+</tr>
+<tr class="odd">
+<td>Edit the May 2026 materials</td>
+<td><code>2605</code></td>
+</tr>
+<tr class="even">
+<td>Fix a typo in January 2026</td>
+<td><code>2601</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="landing-page" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="landing-page"><span class="header-section-number">3.2</span> Landing page</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 45%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Purpose</th>
+<th style="text-align: center;">Edit?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>_sections/</code></td>
+<td>Landing page content</td>
+<td style="text-align: center;">✅ Frequently</td>
+</tr>
+<tr class="even">
+<td><code>data/</code></td>
+<td>Landing page configuration</td>
+<td style="text-align: center;">✅ Frequently</td>
+</tr>
+<tr class="odd">
+<td><code>img/</code></td>
+<td>Images and logos</td>
+<td style="text-align: center;">✅ Frequently</td>
+</tr>
+<tr class="even">
+<td><code>styles.css</code></td>
+<td>Landing page styling</td>
+<td style="text-align: center;">🟡 Occasionally</td>
+</tr>
+<tr class="odd">
+<td><code>scripts/</code></td>
+<td>Generates dynamic landing page content</td>
+<td style="text-align: center;">❌ Usually no</td>
+</tr>
+<tr class="even">
+<td><code>tests/</code></td>
+<td>Automated tests</td>
+<td style="text-align: center;">❌ Usually no</td>
+</tr>
+<tr class="odd">
+<td><code>.github/workflows/</code></td>
+<td>GitHub Actions</td>
+<td style="text-align: center;">❌ Usually no</td>
+</tr>
+<tr class="even">
+<td><code>docs/developer/</code></td>
+<td>Developer documentation</td>
+<td style="text-align: center;">❌ Only template developers</td>
+</tr>
+<tr class="odd">
+<td><code>.quarto/</code></td>
+<td>Quarto cache</td>
+<td style="text-align: center;">❌ Automatically generated</td>
+</tr>
+<tr class="even">
+<td><code>_site/</code></td>
+<td>Generated website</td>
+<td style="text-align: center;">❌ Automatically generated</td>
+</tr>
+<tr class="odd">
+<td><code>.venv/</code></td>
+<td>Virtual environment</td>
+<td style="text-align: center;">❌ Automatically created</td>
+</tr>
+</tbody>
+</table>
+<p>/ ├── _sections/ ├── data/ ├── img/ ├── scripts/ ├── tests/ ├── docs/ ├── styles.css ├── index.qmd └── …</p>
+</section>
+<section id="branches" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="branches"><span class="header-section-number">3.3</span> Branches</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

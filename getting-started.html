@@ -82,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-40766f26011dd0955435ccc10f1198e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a8d14d036aacfc61ba52a6ee93c515d2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><br></p>
 <p>This chapter explains how to create your own copy of the SciLifeLab Course Page Template, set it up on your computer, and publish your first changes.</p>
 <p>By the end of this chapter, you will have your own course repository, be able to edit and preview your course website locally, and know how to publish updates to GitHub.</p>
-<p>You do not need prior experience with Git, GitHub, Visual Studio Code, or Quarto. Each section provides step-by-step instructions and explains what you should expect to see before moving on to the next step.</p>
+<p>You do not need prior experience with Git, Python, Visual Studio Code or Quarto. Each section provides step-by-step instructions and explains what you should expect to see before moving on to the next step.</p>
 <p>The chapter is divided into two parts:</p>
 <ul>
 <li>One-time setup: the steps you only need to complete once when creating a new course repository.</li>
@@ -432,14 +432,13 @@ Tip
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="add-the-website-link-to-your-repository"><span class="header-section-number">2.2.4</span> Add the website link to your repository</h3>
 <p>Once your course website has been published, you can add its URL to your GitHub repository. This makes it easy to open the published website directly from the repository home page.</p>
 <ol type="1">
-<li><p>In your GitHub repository, click the <strong>Code</strong> tab.</p></li>
-<li><p>On the right-hand side of the page, locate the <strong>About</strong> section and click the <strong>Settings</strong> <span aria-hidden="true">⚙️</span> icon.</p></li>
+<li>On the right-hand side of the repository home page, locate the <strong>About</strong> section and click the <strong>Settings</strong> <span aria-hidden="true">⚙️</span> icon.</li>
 </ol>
 <p><span style="color: red; font-weight: bold;">Screenshot: Repository home page showing the About settings button.</span></p>
-<ol start="3" type="1">
+<ol start="2" type="1">
 <li><p>In the <strong>Edit repository details</strong> dialog:</p>
 <ul>
-<li>Select <strong>Use your GitHub Pages website to automatically fill the Website URL</strong>.</li>
+<li>Select <strong>Use your GitHub Pages website</strong>.</li>
 <li>Click <strong>Save changes</strong>.</li>
 </ul></li>
 </ol>
@@ -576,7 +575,7 @@ Tip
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/ORGANISATION/my-course.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span style="color: red; font-weight: bold;">Screenshot: Terminal showing the completed <code>git clone</code> command.</span></p>
 <p>Git will download the repository and create a new folder containing all of the files needed for your course website.</p>
-<p>You now have a local copy of your course repository. In the next section, you will open it in Visual Studio Code and prepare it for editing.</p>
+<p>You now have a local copy of your course repository. In the next section, you will open it in VS Code and prepare it for editing.</p>
 <div class="quick-reference">
 <p><span class="quick-reference-title">Quick reference</span><br>
 <span class="quick-reference-subtitle"> Clone the repository to your computer </span></p>
@@ -629,7 +628,9 @@ Tip
 <li>Navigate to the repository you just cloned, select the repository folder, and click <strong>Open</strong>.</li>
 </ol>
 <p><span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Open Folder dialog with the cloned repository selected.</span></p>
-<p>4.The files and folders in your repository should now appear in the <strong>Explorer</strong> panel on the left-hand side of the window.</p>
+<ol start="4" type="1">
+<li>The files and folders in your repository should now appear in the <strong>Explorer</strong> panel on the left-hand side of the window.</li>
+</ol>
 <p>Throughout this guide, you will edit files by selecting them from the Explorer.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Explorer panel with the repository opened.</span></p>
 <ol start="5" type="1">
@@ -898,13 +899,13 @@ Tip
 </section>
 <section id="commit-and-push-your-changes" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="commit-and-push-your-changes"><span class="header-section-number">2.7</span> Commit and push your changes</h2>
-<p>So far, any changes you make exist only on your own computer.</p>
-<p>To make these changes available to collaborators and publish them on your course website, you need to <strong>commit</strong> and <strong>push</strong> them to GitHub.</p>
+<p>So far, any changes you will make exist only on your own computer.</p>
+<p>To make changes available to collaborators and publish them on your course website, you need to <strong>commit</strong> and <strong>push</strong> them to GitHub.</p>
 <p>In this section, you will make a small change to the landing page and publish it to your repository.</p>
 <section id="make-a-small-change" class="level3" data-number="2.7.1">
 <h3 data-number="2.7.1" class="anchored" data-anchor-id="make-a-small-change"><span class="header-section-number">2.7.1</span> Make a small change</h3>
 <ol type="1">
-<li><p>Open <code>_sections/hero.qmd</code>.</p></li>
+<li><p>In the explorer panel in VS Code, open the file <code>_sections/hero.qmd</code>.</p></li>
 <li><p>Locate the course title:</p></li>
 </ol>
 <pre class="text"><code>:::{.hero__copy}
@@ -926,7 +927,8 @@ This is my first course website
 </section>
 <section id="open-source-control" class="level3" data-number="2.7.2">
 <h3 data-number="2.7.2" class="anchored" data-anchor-id="open-source-control"><span class="header-section-number">2.7.2</span> Open Source Control</h3>
-<p>In Visual Studio Code, click the <strong>Source Control</strong> icon in the Activity Bar on the left-hand side.</p>
+<p>The next steps will upload the small change you made to your GitHub repository so that it becomes available to your collaborators and can be published on your course website.</p>
+<p>In VS Code, this is done from the <strong>Source Control</strong> panel. To open it, click the <strong>Source Control</strong> icon in the Activity Bar on the left-hand side of the window.</p>
 <p>You should now see the files that have changed since you cloned the repository. In this example, <code>_sections/hero.qmd</code> should be listed under <strong>Changes</strong>.</p>
 <p><span style="color: red; font-weight: bold;">Screenshot: Source Control showing the modified file.</span></p>
 </section>
@@ -1004,6 +1006,12 @@ Tip
 <li><a href="./course-instances.html">Course instances</a> to create, manage and customize course instances.</li>
 <li><a href="./fairification.html">FAIRification</a> to prepare your training materials for publication and reuse.</li>
 </ul>
+<p><br></p>
+<div class="guide-footer">
+<hr>
+<p>This User Guide is maintained by SciLifeLab Training Hub.</p>
+<p>If you have questions, encounter problems, or have suggestions for improving the guide or the SciLifeLab Course Webpage Template, please open an issue in the SciLifeLab Course Webpage Template GitHub repository or contact SciLifeLab Training Hub at <strong>training@scilifelab.se</strong>.</p>
+</div>
 
 
 </section>
